@@ -2,6 +2,8 @@
 
 class SiteController extends Controller
 {
+
+	public $layouts = '//layouts/main';
 	/**
 	 * Declares class-based actions.
 	 */
@@ -51,6 +53,7 @@ class SiteController extends Controller
 	 */
 	public function actionContact()
 	{
+		//$this->layout = '//layouts/column1';
 		$model=new ContactForm;
 		if(isset($_POST['ContactForm']))
 		{

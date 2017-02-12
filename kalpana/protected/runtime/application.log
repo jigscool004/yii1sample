@@ -1,0 +1,1195 @@
+2017/02/05 08:39:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "ite/page".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('ite/page')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/ite/page?view=about
+---
+2017/02/08 19:46:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "css/yourcss.css".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('css/yourcss.css')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/css/yourcss.css
+HTTP_REFERER=http://localhost/yii1sample/kalpana/site/contact
+---
+2017/02/08 19:46:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/yourscript.js".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('js/yourscript.j...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/js/yourscript.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/site/contact
+---
+2017/02/08 19:46:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "js/yourscript.js".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('js/yourscript.j...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/js/yourscript.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/site/contact
+---
+2017/02/08 19:54:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "plugins".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('plugins')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('plugins')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/plugins/jQ...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/plugins/jQuery/jquery-2.2.3.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:54:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dist".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('dist')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('dist')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/dist/js/ap...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/dist/js/app.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:54:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "plugins".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('plugins')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('plugins')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/plugins/da...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/plugins/datatables/dataTables.bootstrap.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:54:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "bootstrap".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('bootstrap')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('bootstrap')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/bootstrap/...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/bootstrap/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:54:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "plugins".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('plugins')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('plugins')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/plugins/da...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/plugins/datatables/jquery.dataTables.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:54:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "bootstrap".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('bootstrap')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('bootstrap')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/bootstrap/...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/bootstrap/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:54:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dist".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('dist')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('dist')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/dist/js/ap...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/dist/js/app.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:54:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "plugins".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('plugins')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('plugins')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/plugins/da...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/plugins/datatables/jquery.dataTables.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:54:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "plugins".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('plugins')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('plugins')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/plugins/da...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/plugins/datatables/dataTables.bootstrap.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:57:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "bootstrap".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('bootstrap')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('bootstrap')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/bootstrap/...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/bootstrap/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:57:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dist".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('dist')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('dist')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/dist/js/ap...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/dist/js/app.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:57:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "plugins".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('plugins')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('plugins')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/plugins/jQ...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/plugins/jQuery/jquery-2.2.3.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:57:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "plugins".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('plugins')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('plugins')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/plugins/jQ...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/plugins/jQuery/jquery-2.2.3.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:57:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "bootstrap".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('bootstrap')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('bootstrap')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/bootstrap/...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/bootstrap/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:57:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dist".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('dist')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('dist')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/dist/js/ap...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/dist/js/app.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:57:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/08 19:57:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "plugins".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('plugins')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('plugins')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/plugins/jQ...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/plugins/jQuery/jquery-2.2.3.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:57:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "bootstrap".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('bootstrap')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('bootstrap')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/bootstrap/...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/bootstrap/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:57:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dist".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('dist')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('dist')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/dist/js/ap...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/dist/js/app.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:57:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/08 19:57:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "plugins".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('plugins')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('plugins')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/plugins/jQ...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/plugins/jQuery/jquery-2.2.3.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:57:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "bootstrap".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('bootstrap')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('bootstrap')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/bootstrap/...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/bootstrap/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 19:57:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dist".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('dist')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('dist')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/dist/js/ap...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/dist/js/app.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 20:00:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "bootstrap".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('bootstrap')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('bootstrap')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/bootstrap/...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/bootstrap/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 20:00:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dist".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('dist')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('dist')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/dist/js/ap...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/dist/js/app.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 20:00:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "plugins".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('plugins')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('plugins')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/plugins/jQ...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/plugins/jQuery/jquery-2.2.3.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 20:00:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "plugins".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('plugins')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('plugins')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/plugins/jQ...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/plugins/jQuery/jquery-2.2.3.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 20:00:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "bootstrap".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('bootstrap')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('bootstrap')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/bootstrap/...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/bootstrap/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 20:00:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dist".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('dist')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('dist')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/dist/js/ap...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/dist/js/app.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 20:00:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dashboard.php".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('dashboard.php')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('dashboard.php')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/dashboard....')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/dashboard.php
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 20:00:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "bootstrap".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('bootstrap')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('bootstrap')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/bootstrap/...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/bootstrap/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 20:00:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dist".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('dist')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('dist')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/dist/js/ap...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/dist/js/app.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 20:00:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "bootstrap".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('bootstrap')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('bootstrap')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/bootstrap/...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/bootstrap/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 20:00:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dist".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('dist')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('dist')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/dist/js/ap...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/dist/js/app.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/index
+---
+2017/02/08 20:00:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "plugins".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('plugins')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('plugins')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/plugins/jQ...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/plugins/jQuery/jquery-2.2.3.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 20:00:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "bootstrap".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('bootstrap')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('bootstrap')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/bootstrap/...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/bootstrap/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 20:00:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dist".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('dist')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('dist')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/dist/js/ap...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/dist/js/app.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 20:00:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "plugins".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('plugins')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('plugins')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/plugins/jQ...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/plugins/jQuery/jquery-2.2.3.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 20:00:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "bootstrap".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('bootstrap')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('bootstrap')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/bootstrap/...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/bootstrap/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 20:00:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dist".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('dist')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('dist')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/dist/js/ap...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/dist/js/app.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 20:01:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "plugins".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('plugins')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('plugins')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/plugins/jQ...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/plugins/jQuery/jquery-2.2.3.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 20:01:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "bootstrap".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('bootstrap')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('bootstrap')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/bootstrap/...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/bootstrap/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 20:01:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dist".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('dist')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('dist')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/dist/js/ap...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/dist/js/app.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 20:01:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "plugins".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('plugins')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('plugins')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/plugins/jQ...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/plugins/jQuery/jquery-2.2.3.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 20:01:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dist".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('dist')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('dist')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/dist/js/ap...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/dist/js/app.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 20:01:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "bootstrap".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('bootstrap')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('bootstrap')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/bootstrap/...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/bootstrap/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 20:01:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "plugins".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('plugins')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('plugins')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/plugins/jQ...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/plugins/jQuery/jquery-2.2.3.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 20:01:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "bootstrap".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('bootstrap')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('bootstrap')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/bootstrap/...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/bootstrap/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 20:01:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dist".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('dist')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('dist')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/dist/js/ap...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/dist/js/app.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 20:01:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "plugins".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('plugins')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('plugins')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/plugins/jQ...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/plugins/jQuery/jquery-2.2.3.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 20:01:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "bootstrap".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('bootstrap')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('bootstrap')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/bootstrap/...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/bootstrap/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 20:01:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "dist".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('dist')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('dist')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/dist/js/ap...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/dist/js/app.min.js
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 20:01:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/08 20:01:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/08 20:02:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "hotel-view.php".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('hotel-view.php')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('hotel-view.php')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/hotel-view...')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/hotel-view.php
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 20:50:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/08 20:51:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/08 20:53:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/08 23:22:43 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "column1".' in /var/www/html/yii1sample/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/main.php(54): CController->renderPartial('column1')
+#1 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require('/var/www/html/y...')
+#2 /var/www/html/yii1sample/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/y...', Array, true)
+#3 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/var/www/html/y...', Array, true)
+#4 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div id="sideba...')
+#5 /var/www/html/yii1sample/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div id="sideba...')
+#6 /var/www/html/yii1sample/framework/web/CBaseController.php(214): COutputProcessor->run()
+#7 /var/www/html/yii1sample/framework/web/CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#8 /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/column1.php(18): CBaseController->endContent()
+#9 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require('/var/www/html/y...')
+#10 /var/www/html/yii1sample/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/y...', Array, true)
+#11 /var/www/html/yii1sample/framework/web/CController.php(784): CBaseController->renderFile('/var/www/html/y...', Array, true)
+#12 /var/www/html/yii1sample/kalpana/protected/controllers/SiteController.php(75): CController->render('contact', Array)
+#13 /var/www/html/yii1sample/framework/web/actions/CInlineAction.php(49): SiteController->actionContact()
+#14 /var/www/html/yii1sample/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/yii1sample/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/yii1sample/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('contact')
+#18 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
+#19 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#20 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/contact
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 23:23:22 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "layout/column1".' in /var/www/html/yii1sample/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/main.php(54): CController->renderPartial('layout/column1')
+#1 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require('/var/www/html/y...')
+#2 /var/www/html/yii1sample/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/y...', Array, true)
+#3 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/var/www/html/y...', Array, true)
+#4 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div id="sideba...')
+#5 /var/www/html/yii1sample/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div id="sideba...')
+#6 /var/www/html/yii1sample/framework/web/CBaseController.php(214): COutputProcessor->run()
+#7 /var/www/html/yii1sample/framework/web/CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#8 /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/column1.php(18): CBaseController->endContent()
+#9 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require('/var/www/html/y...')
+#10 /var/www/html/yii1sample/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/y...', Array, true)
+#11 /var/www/html/yii1sample/framework/web/CController.php(784): CBaseController->renderFile('/var/www/html/y...', Array, true)
+#12 /var/www/html/yii1sample/kalpana/protected/controllers/SiteController.php(75): CController->render('contact', Array)
+#13 /var/www/html/yii1sample/framework/web/actions/CInlineAction.php(49): SiteController->actionContact()
+#14 /var/www/html/yii1sample/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/yii1sample/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/yii1sample/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('contact')
+#18 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
+#19 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#20 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/contact
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 23:23:28 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "layout/column1".' in /var/www/html/yii1sample/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/main.php(54): CController->renderPartial('layout/column1')
+#1 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require('/var/www/html/y...')
+#2 /var/www/html/yii1sample/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/y...', Array, true)
+#3 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/var/www/html/y...', Array, true)
+#4 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div id="sideba...')
+#5 /var/www/html/yii1sample/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div id="sideba...')
+#6 /var/www/html/yii1sample/framework/web/CBaseController.php(214): COutputProcessor->run()
+#7 /var/www/html/yii1sample/framework/web/CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#8 /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/column1.php(18): CBaseController->endContent()
+#9 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require('/var/www/html/y...')
+#10 /var/www/html/yii1sample/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/y...', Array, true)
+#11 /var/www/html/yii1sample/framework/web/CController.php(784): CBaseController->renderFile('/var/www/html/y...', Array, true)
+#12 /var/www/html/yii1sample/kalpana/protected/controllers/SiteController.php(75): CController->render('contact', Array)
+#13 /var/www/html/yii1sample/framework/web/actions/CInlineAction.php(49): SiteController->actionContact()
+#14 /var/www/html/yii1sample/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/yii1sample/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/yii1sample/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('contact')
+#18 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
+#19 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#20 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 23:25:17 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "webroot.themes.kalpana.views.layouts.main.column1".' in /var/www/html/yii1sample/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/main.php(54): CController->renderPartial('webroot.themes....')
+#1 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require('/var/www/html/y...')
+#2 /var/www/html/yii1sample/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/y...', Array, true)
+#3 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/var/www/html/y...', Array, true)
+#4 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div id="sideba...')
+#5 /var/www/html/yii1sample/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div id="sideba...')
+#6 /var/www/html/yii1sample/framework/web/CBaseController.php(214): COutputProcessor->run()
+#7 /var/www/html/yii1sample/framework/web/CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#8 /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/column1.php(18): CBaseController->endContent()
+#9 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require('/var/www/html/y...')
+#10 /var/www/html/yii1sample/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/y...', Array, true)
+#11 /var/www/html/yii1sample/framework/web/CController.php(784): CBaseController->renderFile('/var/www/html/y...', Array, true)
+#12 /var/www/html/yii1sample/kalpana/protected/controllers/SiteController.php(75): CController->render('contact', Array)
+#13 /var/www/html/yii1sample/framework/web/actions/CInlineAction.php(49): SiteController->actionContact()
+#14 /var/www/html/yii1sample/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/yii1sample/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/yii1sample/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('contact')
+#18 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
+#19 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#20 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/08 23:25:38 [error] [php] Undefined variable: content (/var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/column1.php:16)
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/main.php(54): SiteController->renderPartial()
+#2 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require()
+#3 /var/www/html/yii1sample/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#4 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#5 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#6 /var/www/html/yii1sample/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#7 /var/www/html/yii1sample/framework/web/CBaseController.php(214): CContentDecorator->run()
+#8 /var/www/html/yii1sample/framework/web/CBaseController.php(308): SiteController->endWidget()
+#9 /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/column1.php(18): SiteController->endContent()
+#10 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require()
+#11 /var/www/html/yii1sample/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#12 /var/www/html/yii1sample/framework/web/CController.php(784): SiteController->renderFile()
+#13 /var/www/html/yii1sample/kalpana/protected/controllers/SiteController.php(75): SiteController->render()
+#14 /var/www/html/yii1sample/framework/web/actions/CInlineAction.php(49): SiteController->actionContact()
+#15 /var/www/html/yii1sample/framework/web/CController.php(308): CInlineAction->runWithParams()
+#16 /var/www/html/yii1sample/framework/web/CController.php(286): SiteController->runAction()
+#17 /var/www/html/yii1sample/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#18 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): SiteController->run()
+#19 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#20 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#21 /var/www/html/yii1sample/kalpana/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii1sample/kalpana/index.php/site/contact
+in /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/column1.php (16)
+in /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/main.php (54)
+in /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/column1.php (18)
+2017/02/09 22:28:12 [error] [php] Undefined variable: content (/var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/main.php:160)
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/column1.php(14): SiteController->renderPartial()
+#2 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require()
+#3 /var/www/html/yii1sample/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#4 /var/www/html/yii1sample/framework/web/CController.php(784): SiteController->renderFile()
+#5 /var/www/html/yii1sample/kalpana/protected/controllers/SiteController.php(101): SiteController->render()
+#6 /var/www/html/yii1sample/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#7 /var/www/html/yii1sample/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /var/www/html/yii1sample/framework/web/CController.php(286): SiteController->runAction()
+#9 /var/www/html/yii1sample/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#10 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): SiteController->run()
+#11 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#13 /var/www/html/yii1sample/kalpana/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii1sample/kalpana/index.php/site/login
+in /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/main.php (160)
+in /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/column1.php (14)
+in /var/www/html/yii1sample/kalpana/protected/controllers/SiteController.php (101)
+2017/02/09 22:28:43 [error] [php] Undefined variable: content (/var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/main.php:160)
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(869): SiteController->renderFile()
+#1 /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/column1.php(17): SiteController->renderPartial()
+#2 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require()
+#3 /var/www/html/yii1sample/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#4 /var/www/html/yii1sample/framework/web/CController.php(784): SiteController->renderFile()
+#5 /var/www/html/yii1sample/kalpana/protected/controllers/SiteController.php(101): SiteController->render()
+#6 /var/www/html/yii1sample/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#7 /var/www/html/yii1sample/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /var/www/html/yii1sample/framework/web/CController.php(286): SiteController->runAction()
+#9 /var/www/html/yii1sample/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#10 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): SiteController->run()
+#11 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#13 /var/www/html/yii1sample/kalpana/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii1sample/kalpana/index.php/site/login
+in /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/main.php (160)
+in /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/column1.php (17)
+in /var/www/html/yii1sample/kalpana/protected/controllers/SiteController.php (101)
+2017/02/12 08:01:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/12 08:02:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/12 08:02:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "menu".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('menu')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('menu')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/menu')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/menu
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/login
+---
+2017/02/12 08:02:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/12 08:03:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/12 08:03:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/12 08:03:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/12 11:57:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "gii".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('gii')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/gii
+---
+2017/02/12 12:06:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "ad".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('ad')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('ad')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('role/ad')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/role/ad
+---
+2017/02/12 12:06:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "add".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('add')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('add')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('role/add')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/role/add
+---
+2017/02/12 12:07:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "add".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('add')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('add')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('role/add')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/role/add
+---
+2017/02/12 18:47:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/12 18:48:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/12 18:50:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/12 18:50:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/12 18:51:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/12 18:51:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "about".' in /var/www/html/yii1sample/framework/web/CController.php:483
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CController.php(270): CController->missingAction('about')
+#1 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('about')
+#2 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/about')
+#3 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#4 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/about
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/contact
+---
+2017/02/12 20:13:30 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "sidebar_menu".' in /var/www/html/yii1sample/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/main.php(103): CController->renderPartial('sidebar_menu')
+#1 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require('/var/www/html/y...')
+#2 /var/www/html/yii1sample/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/y...', Array, true)
+#3 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/var/www/html/y...', Array, true)
+#4 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#5 /var/www/html/yii1sample/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#6 /var/www/html/yii1sample/framework/web/CBaseController.php(214): COutputProcessor->run()
+#7 /var/www/html/yii1sample/framework/web/CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#8 /var/www/html/yii1sample/kalpana/protected/views/layouts/column1.php(6): CBaseController->endContent()
+#9 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require('/var/www/html/y...')
+#10 /var/www/html/yii1sample/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/y...', Array, true)
+#11 /var/www/html/yii1sample/framework/web/CController.php(784): CBaseController->renderFile('/var/www/html/y...', Array, true)
+#12 /var/www/html/yii1sample/kalpana/protected/controllers/SiteController.php(75): CController->render('contact', Array)
+#13 /var/www/html/yii1sample/framework/web/actions/CInlineAction.php(49): SiteController->actionContact()
+#14 /var/www/html/yii1sample/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/yii1sample/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/yii1sample/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('contact')
+#18 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
+#19 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#20 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/contact
+HTTP_REFERER=http://localhost/yii1sample/kalpana/site/index
+---
+2017/02/12 20:15:20 [error] [exception.CException] exception 'CException' with message 'SiteController cannot find the requested view "//view/layouts/sidebar_menu".' in /var/www/html/yii1sample/framework/web/CController.php:878
+Stack trace:
+#0 /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/main.php(103): CController->renderPartial('//view/layouts/...')
+#1 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require('/var/www/html/y...')
+#2 /var/www/html/yii1sample/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/y...', Array, true)
+#3 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/var/www/html/y...', Array, true)
+#4 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div id="conten...')
+#5 /var/www/html/yii1sample/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div id="conten...')
+#6 /var/www/html/yii1sample/framework/web/CBaseController.php(214): COutputProcessor->run()
+#7 /var/www/html/yii1sample/framework/web/CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#8 /var/www/html/yii1sample/kalpana/protected/views/layouts/column1.php(6): CBaseController->endContent()
+#9 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require('/var/www/html/y...')
+#10 /var/www/html/yii1sample/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/y...', Array, true)
+#11 /var/www/html/yii1sample/framework/web/CController.php(784): CBaseController->renderFile('/var/www/html/y...', Array, true)
+#12 /var/www/html/yii1sample/kalpana/protected/controllers/SiteController.php(75): CController->render('contact', Array)
+#13 /var/www/html/yii1sample/framework/web/actions/CInlineAction.php(49): SiteController->actionContact()
+#14 /var/www/html/yii1sample/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /var/www/html/yii1sample/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#16 /var/www/html/yii1sample/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('contact')
+#18 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('site/contact')
+#19 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#20 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/site/contact
+HTTP_REFERER=http://localhost/yii1sample/kalpana/site/index
+---
+2017/02/12 20:22:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/12 20:27:30 [error] [php] include(Breadcrumbs.php): failed to open stream: No such file or directory (/var/www/html/yii1sample/framework/YiiBase.php:432)
+Stack trace:
+#0 /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/main.php(116): spl_autoload_call()
+#1 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require()
+#2 /var/www/html/yii1sample/framework/web/CBaseController.php(95): RoleController->renderInternal()
+#3 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(76): RoleController->renderFile()
+#4 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#5 /var/www/html/yii1sample/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#6 /var/www/html/yii1sample/framework/web/CBaseController.php(214): CContentDecorator->run()
+#7 /var/www/html/yii1sample/framework/web/CBaseController.php(308): RoleController->endWidget()
+#8 /var/www/html/yii1sample/kalpana/protected/views/layouts/column2.php(22): RoleController->endContent()
+#9 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require()
+#10 /var/www/html/yii1sample/framework/web/CBaseController.php(95): RoleController->renderInternal()
+#11 /var/www/html/yii1sample/framework/web/CController.php(784): RoleController->renderFile()
+#12 /var/www/html/yii1sample/kalpana/protected/controllers/RoleController.php(128): RoleController->render()
+#13 /var/www/html/yii1sample/framework/web/actions/CInlineAction.php(49): RoleController->actionIndex()
+#14 /var/www/html/yii1sample/framework/web/CController.php(308): CInlineAction->runWithParams()
+#15 /var/www/html/yii1sample/framework/web/filters/CFilterChain.php(133): RoleController->runAction()
+#16 /var/www/html/yii1sample/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#17 /var/www/html/yii1sample/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#18 /var/www/html/yii1sample/framework/web/filters/CInlineFilter.php(58): RoleController->filterAccessControl()
+#19 /var/www/html/yii1sample/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#20 /var/www/html/yii1sample/framework/web/CController.php(291): CFilterChain->run()
+#21 /var/www/html/yii1sample/framework/web/CController.php(265): RoleController->runActionWithFilters()
+#22 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): RoleController->run()
+#23 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#24 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#25 /var/www/html/yii1sample/kalpana/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii1sample/kalpana/index.php/role/index
+in /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/main.php (116)
+in /var/www/html/yii1sample/kalpana/protected/views/layouts/column2.php (22)
+in /var/www/html/yii1sample/kalpana/protected/controllers/RoleController.php (128)
+2017/02/12 20:33:56 [error] [exception.CException] exception 'CException' with message 'Property "CBreadcrumbs.tabName" is not defined.' in /var/www/html/yii1sample/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWidgetFactory.php(161): CComponent->__set('tabName', 'ol')
+#1 /var/www/html/yii1sample/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(RoleController), 'zii.widgets.CBr...', Array)
+#2 /var/www/html/yii1sample/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.CBr...', Array)
+#3 /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/main.php(120): CBaseController->widget('zii.widgets.CBr...', Array)
+#4 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require('/var/www/html/y...')
+#5 /var/www/html/yii1sample/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/y...', Array, true)
+#6 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/var/www/html/y...', Array, true)
+#7 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div class="spa...')
+#8 /var/www/html/yii1sample/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div class="spa...')
+#9 /var/www/html/yii1sample/framework/web/CBaseController.php(214): COutputProcessor->run()
+#10 /var/www/html/yii1sample/framework/web/CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#11 /var/www/html/yii1sample/kalpana/protected/views/layouts/column2.php(22): CBaseController->endContent()
+#12 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require('/var/www/html/y...')
+#13 /var/www/html/yii1sample/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/y...', Array, true)
+#14 /var/www/html/yii1sample/framework/web/CController.php(784): CBaseController->renderFile('/var/www/html/y...', Array, true)
+#15 /var/www/html/yii1sample/kalpana/protected/controllers/RoleController.php(79): CController->render('create', Array)
+#16 /var/www/html/yii1sample/framework/web/actions/CInlineAction.php(49): RoleController->actionCreate()
+#17 /var/www/html/yii1sample/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /var/www/html/yii1sample/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 /var/www/html/yii1sample/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#20 /var/www/html/yii1sample/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 /var/www/html/yii1sample/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 /var/www/html/yii1sample/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 /var/www/html/yii1sample/framework/web/CController.php(291): CFilterChain->run()
+#24 /var/www/html/yii1sample/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('create')
+#26 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('role/create')
+#27 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#28 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/role/create
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/login
+---
+2017/02/12 20:34:11 [error] [exception.CException] exception 'CException' with message 'Property "CBreadcrumbs.class" is not defined.' in /var/www/html/yii1sample/framework/base/CComponent.php:173
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWidgetFactory.php(161): CComponent->__set('class', 'breadcrumb')
+#1 /var/www/html/yii1sample/framework/web/CBaseController.php(146): CWidgetFactory->createWidget(Object(RoleController), 'zii.widgets.CBr...', Array)
+#2 /var/www/html/yii1sample/framework/web/CBaseController.php(180): CBaseController->createWidget('zii.widgets.CBr...', Array)
+#3 /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/main.php(120): CBaseController->widget('zii.widgets.CBr...', Array)
+#4 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require('/var/www/html/y...')
+#5 /var/www/html/yii1sample/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/y...', Array, true)
+#6 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(76): CBaseController->renderFile('/var/www/html/y...', Array, true)
+#7 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate('<div class="spa...')
+#8 /var/www/html/yii1sample/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput('<div class="spa...')
+#9 /var/www/html/yii1sample/framework/web/CBaseController.php(214): COutputProcessor->run()
+#10 /var/www/html/yii1sample/framework/web/CBaseController.php(308): CBaseController->endWidget('CContentDecorat...')
+#11 /var/www/html/yii1sample/kalpana/protected/views/layouts/column2.php(22): CBaseController->endContent()
+#12 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require('/var/www/html/y...')
+#13 /var/www/html/yii1sample/framework/web/CBaseController.php(95): CBaseController->renderInternal('/var/www/html/y...', Array, true)
+#14 /var/www/html/yii1sample/framework/web/CController.php(784): CBaseController->renderFile('/var/www/html/y...', Array, true)
+#15 /var/www/html/yii1sample/kalpana/protected/controllers/RoleController.php(79): CController->render('create', Array)
+#16 /var/www/html/yii1sample/framework/web/actions/CInlineAction.php(49): RoleController->actionCreate()
+#17 /var/www/html/yii1sample/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#18 /var/www/html/yii1sample/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 /var/www/html/yii1sample/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#20 /var/www/html/yii1sample/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 /var/www/html/yii1sample/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 /var/www/html/yii1sample/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 /var/www/html/yii1sample/framework/web/CController.php(291): CFilterChain->run()
+#24 /var/www/html/yii1sample/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): CController->run('create')
+#26 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('role/create')
+#27 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#28 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/yii1sample/kalpana/index.php/role/create
+HTTP_REFERER=http://localhost/yii1sample/kalpana/index.php/site/login
+---
+2017/02/12 20:34:20 [error] [php] Invalid argument supplied for foreach() (/var/www/html/yii1sample/framework/web/helpers/CHtml.php:2799)
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CBaseController.php(181): CBreadcrumbs->run()
+#1 /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/main.php(120): RoleController->widget()
+#2 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require()
+#3 /var/www/html/yii1sample/framework/web/CBaseController.php(95): RoleController->renderInternal()
+#4 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(76): RoleController->renderFile()
+#5 /var/www/html/yii1sample/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#6 /var/www/html/yii1sample/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#7 /var/www/html/yii1sample/framework/web/CBaseController.php(214): CContentDecorator->run()
+#8 /var/www/html/yii1sample/framework/web/CBaseController.php(308): RoleController->endWidget()
+#9 /var/www/html/yii1sample/kalpana/protected/views/layouts/column2.php(22): RoleController->endContent()
+#10 /var/www/html/yii1sample/framework/web/CBaseController.php(126): require()
+#11 /var/www/html/yii1sample/framework/web/CBaseController.php(95): RoleController->renderInternal()
+#12 /var/www/html/yii1sample/framework/web/CController.php(784): RoleController->renderFile()
+#13 /var/www/html/yii1sample/kalpana/protected/controllers/RoleController.php(79): RoleController->render()
+#14 /var/www/html/yii1sample/framework/web/actions/CInlineAction.php(49): RoleController->actionCreate()
+#15 /var/www/html/yii1sample/framework/web/CController.php(308): CInlineAction->runWithParams()
+#16 /var/www/html/yii1sample/framework/web/filters/CFilterChain.php(133): RoleController->runAction()
+#17 /var/www/html/yii1sample/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#18 /var/www/html/yii1sample/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#19 /var/www/html/yii1sample/framework/web/filters/CInlineFilter.php(58): RoleController->filterAccessControl()
+#20 /var/www/html/yii1sample/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#21 /var/www/html/yii1sample/framework/web/CController.php(291): CFilterChain->run()
+#22 /var/www/html/yii1sample/framework/web/CController.php(265): RoleController->runActionWithFilters()
+#23 /var/www/html/yii1sample/framework/web/CWebApplication.php(282): RoleController->run()
+#24 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#25 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#26 /var/www/html/yii1sample/kalpana/index.php(13): CWebApplication->run()
+REQUEST_URI=/yii1sample/kalpana/index.php/role/create
+in /var/www/html/yii1sample/kalpana/themes/kalpana/views/layouts/main.php (120)
+in /var/www/html/yii1sample/kalpana/protected/views/layouts/column2.php (22)
+in /var/www/html/yii1sample/kalpana/protected/controllers/RoleController.php (79)
+2017/02/12 20:34:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/12 20:34:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
+2017/02/12 20:35:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/kalpana/css/bootstrap.min.css.map".' in /var/www/html/yii1sample/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /var/www/html/yii1sample/framework/web/CWebApplication.php(141): CWebApplication->runController('themes/kalpana/...')
+#1 /var/www/html/yii1sample/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#2 /var/www/html/yii1sample/kalpana/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/yii1sample/kalpana/themes/kalpana/css/bootstrap.min.css.map
+---
