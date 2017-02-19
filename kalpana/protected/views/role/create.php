@@ -12,7 +12,14 @@ $this->menu=array(
 	array('label'=>'Manage Role', 'url'=>array('admin')),
 );
 ?>
+<div class="box-header with-border">
+        <h3 class="box-title">create and manage new role</h3>
+</div>
+<div class="box-body">
+	<div class="row">
+		<?php $this->renderPartial('_form', array('model'=>$model)); ?>		
+	</div>
+</div>
 
-<h1>Create Role</h1>
 
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+

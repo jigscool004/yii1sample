@@ -2,54 +2,97 @@
 /* @var $this RoleController */
 /* @var $model Role */
 
-$this->breadcrumbs=array(
-	'Roles'=>array('index'),
-	'Manage',
+$this->breadcrumbs = array(
+    'Roles' => array('index'),
+    'Manage',
 );
 
-$this->menu=array(
-	array('label'=>'List Role', 'url'=>array('index')),
-	array('label'=>'Create Role', 'url'=>array('create')),
+$this->menu = array(
+    array('label' => 'List Role', 'url' => array('index')),
+    array('label' => 'Create Role', 'url' => array('create')),
 );
 
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#role-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
+//Yii::app()->clientScript->registerScript('search', "
+//$('.search-button').click(function(){
+//	$('.search-form').toggle();
+//	return false;
+//});
+//$('.search-form form').submit(function(){
+//	$('#role-grid').yiiGridView('update', {
+//		data: $(this).serialize()
+//	});
+//	return false;
+//});
+//");
 ?>
 
-<h1>Manage Roles</h1>
+<div class='role'>
+    <div class='box-header'>
+        <h1 class='box-title'>Manage Roles</h1>
+    </div>
+    <div class="box-body table-responsive">
 
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'role-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'id',
-		'role',
-		'status',
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+        <?php
+        $this->widget('zii.widgets.grid.CGridView', array(
+            'id' => 'role-grid',
+            'dataProvider' => $model->search(),
+            'enableSorting' => true,
+            'itemsCssClass' => 'table table-bordered table-striped dataTable no-footer',
+            'pager' => array(
+                'htmlOptions' => array('class' => 'pagination'),
+                 'header'         => '',
+                'firstPageCssClass' => ' first',
+                'previousPageCssClass' => 'previous',
+                
+                
+            ),
+            'summaryText' => 'Showing {page} to {pages} of entries',
+            
+            'template'=>'{items}{summary}{pager}',
+            'filter' => $model,
+            'columns' => array(
+                array(
+                    'name' => 'id',
+                    'value' => '$data->id',
+                    'filter' => false,
+                    'htmlOptions' => array('width' => '5%')
+                ),
+                array(
+                    'name' => 'role',
+                    'value' => '$data->role',
+                    'filter' => CHtml::textField('Role[role]', $model->role, array('class' => 'form-control')),
+                    'htmlOptions' => array('width' => '35%')
+                ),
+                array(
+                    'name' => 'status',
+                    'header' => 'Status',
+                    'value' => function($data) {
+                        return isset($data->status) && $data->status == 1 ? 'Active' : 'Inactive';
+                    },
+                    'filter' => CHtml::dropDownList('Role[status]', $model->status, array(1 => 'Active', 0 => 'Inactive'), array('empty' => '- Select role', 'class' => 'form-control')),
+                            'htmlOptions' => array('width' => '35%')
+                )
+                ,
+                array(
+                    'class' => 'CButtonColumn',
+                    'template' => '{edit}{remove}',
+                    'header' => 'Actions',
+                    'buttons' => array(
+                        'edit' => array(
+                            'label' => '<i class="fa fa-pencil-square-o"></i> Edit &nbsp;&nbsp;|&nbsp;&nbsp;  ',
+                            'options' => array('title' => 'Edit','class' => 'update'),
+                            'url' => 'Yii::app()->createUrl("role/update",array("id" => $data->id))'
+                        ),
+                        'remove' => array(
+                            'label' => '<i class="fa fa-user-times"></i> Delete',
+                            'url' => 'Yii::app()->createUrl("role/delete",array("id" => $data->id))',
+                            'options' => array('title' => 'Delete','class' => 'delete'),
+                        )
+                    ),
+                    'htmlOptions' => array('width' => '15%')
+                ),
+            ),
+        ));
+        ?>
+    </div>
+</div>

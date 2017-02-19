@@ -16,6 +16,11 @@ $this->menu=array(
 );
 ?>
 
-<h1>Update Role <?php echo $model->id; ?></h1>
-
+<div class="box-header with-border">
+        <h3 class="box-title">Update role</h3>
+</div>
+<div class="box-body">
+	<div class="row">
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
+	</div>
+</div>
