@@ -1,17 +1,20 @@
 <?php /* @var $this Controller */ ?>
 <!DOCTYPE html>
 <html>
+    <?php #Yii::app()->bootstrap->register(); ?>
+
     <head>
         <?php
         $baseUrl = Yii::app()->baseUrl;
         $cs = Yii::app()->getClientScript();
+        Yii::app()->clientScript->registerCoreScript('jquery.ui');
         $cs->registerCssFile($baseUrl . '/themes/kalpana/css/bootstrap.min.css');
         $cs->registerCssFile($baseUrl . '/themes/kalpana/css/AdminLTE.css');
         $cs->registerCssFile($baseUrl . '/themes/kalpana/css/font-awesome.min.css');
         $cs->registerCssFile($baseUrl . '/themes/kalpana/css/skins/skin-blue.min.css');
 
 
-        $cs->registerScriptFile($baseUrl . '/themes/kalpana/js/jquery-2.2.3.min.js');
+      //  $cs->registerScriptFile($baseUrl . '/themes/kalpana/js/jquery-2.2.3.min.js');
         $cs->registerScriptFile($baseUrl . '/themes/kalpana/js/bootstrap.min.js');
         $cs->registerScriptFile($baseUrl . '/themes/kalpana/js/app.min.js');
 
@@ -21,7 +24,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
         <meta name="language" content="en">
 
-
+        <style type="text/css">
+            
+        </style>
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
     </head>
     <body class="hold-transition skin-blue sidebar-mini">
@@ -35,7 +40,7 @@
                 <!-- Logo -->
                 <a href="index2.html" class="logo">
                     <!-- mini logo for sidebar mini 50x50 pixels -->
-                    <span class="logo-mini"><b>Kalpana</b> Software</span>
+                    <span class="logo-mini"><b>KS</b> </span>
                     <!-- logo for regular state and mobile devices -->
                     <span class="logo-lg"><b>Kalpana</b> Software</span>
                 </a>
@@ -85,7 +90,7 @@
                             array('label' => '<i class="fa fa-dashboard"></i>  Dashboard ', 'url' => array('')),
                             array('label' => '<i class="fa fa-users"></i> Guest Details', 'url' => array('guest/checkin'),
                                 'submenuOptions' => array('class' => 'treeview-menu', 'id' => 'submenu-dd'),
-                                'itemOptions' => array('class' => 'treeview', 'id' => 'submenu-dd'),
+                                'itemOptions' => array('class' => 'treeview'),
                                 'items' => array(
                                     array('label' => '<i class="fa fa-fw fa-dot-circle-o"></i> Guest Check In ', 'url' => array('guest/checkin')),
                                     array('label' => '<i class="fa fa-fw fa-dot-circle-o"></i> Guest Check Out', 'url' => array('guest/checkout')),
@@ -111,7 +116,7 @@
             <!-- content-wrapper Start -->
             <div class="content-wrapper" style="min-height: 355px;">
                 <section class="content-header">
-                    <h1><i class="fa fa-bed"></i> Room Information</h1>
+                    <h1><?php echo $this->pageTitle; ?></h1>
                     <?php 
                             $this->widget('zii.widgets.CBreadcrumbs',array(
                                         'links' => $this->breadcrumbs,
@@ -125,10 +130,8 @@
 
                 <!-- Content Start -->
                 <section class="content"> 
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <?php echo $content; ?>
-                        </div>
+                    <div class="box box-info">
+                          <?php echo $content; ?>
                     </div>
                 </section>
             </div>
