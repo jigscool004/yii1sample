@@ -33,22 +33,9 @@ $this->menu = array(
     <div class="box-body table-responsive">
 
         <?php
-        $this->widget('zii.widgets.grid.CGridView', array(
+        $this->widget('zii.widgets.grid.CGridView', array_merge(CommonController::customizeGrid(),array(
             'id' => 'role-grid',
             'dataProvider' => $model->search(),
-            'enableSorting' => true,
-            'itemsCssClass' => 'table table-bordered table-striped dataTable no-footer',
-            'pager' => array(
-                'htmlOptions' => array('class' => 'pagination'),
-                 'header'         => '',
-                'firstPageCssClass' => ' first',
-                'previousPageCssClass' => 'previous',
-                
-                
-            ),
-            'summaryText' => 'Showing {page} to {pages} of entries',
-            
-            'template'=>'{items}{summary}{pager}',
             'filter' => $model,
             'columns' => array(
                 array(
@@ -92,7 +79,7 @@ $this->menu = array(
                     'htmlOptions' => array('width' => '15%')
                 ),
             ),
-        ));
+        )));
         ?>
     </div>
 </div>
