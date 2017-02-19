@@ -1,7 +1,6 @@
 <?php
 
 class UserController extends Controller {
-
     /**
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
      * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -61,7 +60,7 @@ class UserController extends Controller {
         $model = new User;
 
         // Uncomment the following line if AJAX validation is needed
-         $this->performAjaxValidation($model);
+        $this->performAjaxValidation($model);
 
         if (isset($_POST['User'])) {
             $model->attributes = $_POST['User'];

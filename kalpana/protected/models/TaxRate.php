@@ -1,26 +1,27 @@
 <?php
 
 /**
- * This is the model class for table "tax_category".
+ * This is the model class for table "tax_rate".
  *
- * The followings are the available columns in table 'tax_category':
+ * The followings are the available columns in table 'tax_rate':
  * @property integer $id
  * @property string $name
- * @property integer $category
+ * @property integer $rate
+ * @property integer $category_id
  * @property integer $status
- * @property string $created_on
  * @property integer $created_by
- * @property string $updated_on
- * @property integer $updated_by
+ * @property string $created_on
+ * @property string $updated_by
+ * @property integer $updated_on
  */
-class TaxCategory extends CActiveRecord
+class TaxRate extends CActiveRecord
 {
 	/**
 	 * @return string the associated database table name
 	 */
 	public function tableName()
 	{
-		return 'tax_category';
+		return 'tax_rate';
 	}
 
 	/**
@@ -31,12 +32,12 @@ class TaxCategory extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, category, status, created_on, created_by, updated_on, updated_by', 'required'),
-			array('category, status, created_by, updated_by', 'numerical', 'integerOnly'=>true),
+			array('name, rate, category_id, status, created_by, created_on, updated_by, updated_on', 'required'),
+			array('rate, category_id, status, created_by, updated_on', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, name, category, status, created_on, created_by, updated_on, updated_by', 'safe', 'on'=>'search'),
+			array('id, name, rate, category_id, status, created_by, created_on, updated_by, updated_on', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,12 +60,13 @@ class TaxCategory extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'name' => 'Name',
-			'category' => 'Category',
+			'rate' => 'Rate',
+			'category_id' => 'Category',
 			'status' => 'Status',
-			'created_on' => 'Created On',
 			'created_by' => 'Created By',
-			'updated_on' => 'Updated On',
+			'created_on' => 'Created On',
 			'updated_by' => 'Updated By',
+			'updated_on' => 'Updated On',
 		);
 	}
 
@@ -88,12 +90,13 @@ class TaxCategory extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('category',$this->category);
+		$criteria->compare('rate',$this->rate);
+		$criteria->compare('category_id',$this->category_id);
 		$criteria->compare('status',$this->status);
-		$criteria->compare('created_on',$this->created_on,true);
 		$criteria->compare('created_by',$this->created_by);
-		$criteria->compare('updated_on',$this->updated_on,true);
-		$criteria->compare('updated_by',$this->updated_by);
+		$criteria->compare('created_on',$this->created_on,true);
+		$criteria->compare('updated_by',$this->updated_by,true);
+		$criteria->compare('updated_on',$this->updated_on);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -104,7 +107,7 @@ class TaxCategory extends CActiveRecord
 	 * Returns the static model of the specified AR class.
 	 * Please note that you should have this exact method in all your CActiveRecord descendants!
 	 * @param string $className active record class name.
-	 * @return TaxCategory the static model class
+	 * @return TaxRate the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{

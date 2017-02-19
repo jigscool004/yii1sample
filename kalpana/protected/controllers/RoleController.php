@@ -14,7 +14,7 @@ class RoleController extends Controller {
         return array(
             'accessControl', // perform access control for CRUD operations
             'postOnly + delete', // we only allow deletion via POST request
-             //array('ext.booster.filters.BootstrapFilter')
+                //array('ext.booster.filters.BootstrapFilter')
         );
     }
 
@@ -30,7 +30,7 @@ class RoleController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update','delete'),
+                'actions' => array('create', 'update', 'delete'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -117,7 +117,7 @@ class RoleController extends Controller {
      * Lists all models.
      */
     public function actionIndex2() {
-        
+
         $model = new Role('search');
         if (isset($_REQUEST['role'])) {
             $model->attributes = $_REQUEST['role'];
@@ -136,7 +136,7 @@ class RoleController extends Controller {
         if (isset($_GET['Role']))
             $model->attributes = $_GET['Role'];
 
-       
+
         $this->render('admin', array(
             'model' => $model,
         ));

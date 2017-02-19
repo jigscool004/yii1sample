@@ -30,10 +30,7 @@ $criteria->select = 'role,id';
 $criteria->compare('status',1);
 $roleAttr = CHtml::listData(Role::model()->findAll($criteria),'id','role');
 
-$criteria = new CDbCriteria();
-$criteria->select = 'id,name';
-$criteria->compare('status',1);
-$userAttr = CHtml::listData(User::model()->findAll($criteria),'id','name');
+$userAttr = CommonController::getUserList();
 
 
 ?>

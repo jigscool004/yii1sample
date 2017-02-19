@@ -29,4 +29,13 @@ class CommonController {
             'template'=>'{items}{summary}{pager}',
         );
     }
+    
+    public static function getUserList() {
+        $criteria = new CDbCriteria();
+        $criteria->select = 'id,name';
+        $criteria->compare('status',1);
+        $userAttr = CHtml::listData(User::model()->findAll($criteria),'id','name');
+        return $userAttr;
+    }
+    
 }
