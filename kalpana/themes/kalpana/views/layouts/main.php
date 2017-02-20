@@ -100,7 +100,7 @@
                                 'submenuOptions' => array('class' => 'treeview-menu', 'id' => 'submenu-dd'),
                                 'itemOptions' => array('class' => 'treeview', 'id' => 'submenu-dd'),
                                 'items' => array(
-                                    array('label' => '<i class="fa fa-fw fa-dot-circle-o"></i> Tax Rate', 'url' => array('taxrate/index')),
+                                    array('label' => '<i class="fa fa-fw fa-dot-circle-o"></i> Tax Rate', 'url' => array('TaxRate/index')),
                                     array('label' => '<i class="fa fa-fw fa-dot-circle-o"></i> Tax Category', 'url' => array('TaxCategory/index')),
                                 ),
                             ),

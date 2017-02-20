@@ -62,11 +62,11 @@ $this->menu = array(
                 ,
                 array(
                     'class' => 'CButtonColumn',
-                    'template' => '{edit}{remove}',
+                    'template' => '{edit}&nbsp;&nbsp;|&nbsp;&nbsp;{remove}',
                     'header' => 'Actions',
                     'buttons' => array(
                         'edit' => array(
-                            'label' => '<i class="fa fa-pencil-square-o"></i> Edit &nbsp;&nbsp;|&nbsp;&nbsp;  ',
+                            'label' => '<i class="fa fa-pencil-square-o"></i> Edit ',
                             'options' => array('title' => 'Edit','class' => 'update'),
                             'url' => 'Yii::app()->createUrl("role/update",array("id" => $data->id))'
                         ),

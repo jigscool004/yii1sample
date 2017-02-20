@@ -27,6 +27,7 @@ class CommonController {
             ),
             'summaryText' => 'Showing {page} to {pages} of entries',
             'template'=>'{items}{summary}{pager}',
+            'pagerCssClass' => 'dataTables_paginate paging_simple_numbers'
         );
     }
     

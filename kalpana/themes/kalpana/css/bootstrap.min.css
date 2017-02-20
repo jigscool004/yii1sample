@@ -5774,7 +5774,6 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px
 }
-/*
 .pager {
     padding-left: 0;
     margin: 20px 0;
@@ -5818,7 +5817,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
     color: #777;
     cursor: not-allowed;
     background-color: #fff
-}*/
+}
 
 .label {
     display: inline;
@@ -8072,3 +8071,4 @@ div.summary {
     text-align: right;
     float: right;    
 }
+.dataTables_paginate{float: right;margin-top:-28px;}

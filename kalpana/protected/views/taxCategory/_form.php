@@ -13,6 +13,8 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation' => true,
+    'enableClientValidation' => true,
+    'clientOptions' =>  array('validateOnSubmit'=>true),
 )); ?>
     <div class="col-lg-10" style='margin-bottom: 20px;'>
         <p class="note">Fields with <span class="required">*</span> are required.</p>

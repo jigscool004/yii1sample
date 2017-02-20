@@ -61,12 +61,14 @@ class TaxCategoryController extends Controller {
         $model = new TaxCategory;
 
         // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
+         $this->performAjaxValidation($model);
 
         if (isset($_POST['TaxCategory'])) {
+            $_POST['TaxCategory']['created_on'] = date('Y-m-d h:i:s');
+            $_POST['TaxCategory']['created_by'] = 1;
             $model->attributes = $_POST['TaxCategory'];
             if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+                $this->redirect(array('index'));
         }
 
         $this->render('create', array(
@@ -83,12 +85,14 @@ class TaxCategoryController extends Controller {
         $model = $this->loadModel($id);
 
         // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
+         $this->performAjaxValidation($model);
 
         if (isset($_POST['TaxCategory'])) {
+            $_POST['TaxCategory']['updated_on'] = date('Y-m-d h:i:s');
+            $_POST['TaxCategory']['updated_by'] = 1;
             $model->attributes = $_POST['TaxCategory'];
             if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+                $this->redirect(array('index'));
         }
 
         $this->render('update', array(
