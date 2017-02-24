@@ -50,6 +50,12 @@ $userAttr = CommonController::getUserList();
             'dataProvider'=>$model->search(),
             'filter'=>$model,
             'columns'=>array(
+                array(
+                    'class' => 'CCheckBoxColumn',
+                    'checkBoxHtmlOptions' => array('name' => 'User[id][]'),
+                    'value' => '$data->id',
+                    'id' => 'id'
+                ),
                 'id' => array(
                     'name' => 'id',
                     'filter' => false,

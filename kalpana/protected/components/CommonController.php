@@ -39,4 +39,7 @@ class CommonController {
         return $userAttr;
     }
     
+    public static function hash_password($password) {
+        return sha1(md5($password));
+    }
 }

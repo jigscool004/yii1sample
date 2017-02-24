@@ -13,6 +13,11 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create TaxRate</h1>
-
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<div class="box-header with-border">
+        <h3 class="box-title">create and manage new tax rate</h3>
+</div>
+<div class="box-body">
+    <div class="row">
+        <?php $this->renderPartial('_form', array('model'=>$model,'taxCategoriesArr' => $taxCategoriesArr)); ?>
+    </div>
+</div>

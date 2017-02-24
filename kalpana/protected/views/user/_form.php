@@ -13,6 +13,8 @@
 	// There is a call to performAjaxValidation() commented in generated controller code.
 	// See class documentation of CActiveForm for details on this.
 	'enableAjaxValidation'=> true,
+    'enableClientValidation' => true,
+    'clientOptions' =>  array('validateOnSubmit'=>true),
 )); ?>
     <div class="col-lg-10" style='margin-bottom: 20px;'>
         <p class="note">Fields with <span class="required">*</span> are required.</p>
@@ -67,7 +69,7 @@
 	<div class="col-lg-6">
 		<?php echo $form->labelEx($model,'mobile_no',array('class' => 'col-lg-3')); ?>
         <div class="col-lg-8">
-            <?php echo $form->textField($model,'mobile_no',array('size'=>20,'maxlength'=>20,'class' => 'form-control')); ?>
+            <?php echo $form->textField($model,'mobile_no',array('size'=>10,'maxlength'=>10,'class' => 'form-control')); ?>
             <?php echo $form->error($model,'mobile_no'); ?>
         </div>
 		

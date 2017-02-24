@@ -34,19 +34,19 @@ class User extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('name, login_username,role_id, email, mobile_no, created_by, created_on','required','on' => 'create,update'),
-            array('hash_password','required','on' => 'create'),
-            
+            array('name, login_username,role_id, email, mobile_no','required','on' => 'create,update'),
+            array('hash_password,confirmpassword','required','on' => 'create'),
+            array('email','email','on' => 'create,update'),
             array('hash_password', 'compare', 'compareAttribute' => 'confirmpassword','on' => 'create,changepassword'),
             
             array('role_id, status, created_by, updated_by', 'numerical', 'integerOnly' => true),
             array('name, email', 'length', 'max' => 100),
             array('login_username', 'length', 'max' => 40),
             array('hash_password', 'length', 'max' => 255),
-            array('mobile_no', 'length', 'max' => 20),
+            array('mobile_no', 'length', 'max' => 10),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, name, login_username, hash_password, role_id, email, mobile_no, status, created_by, created_on, updated_by, updated_on', 'safe', 'on' => 'search'),
+            array('id, name, login_username, hash_password, role_id, email, mobile_no, status, created_by, created_on, updated_by, updated_on', 'safe', 'on' => 'search,create,update'),
         );
     }
 
@@ -77,6 +77,7 @@ class User extends CActiveRecord {
             'created_on' => 'Created On',
             'updated_by' => 'Updated By',
             'updated_on' => 'Updated On',
+            'confirmpassword' => 'Confrim Password',
         );
     }
 
@@ -113,6 +114,11 @@ class User extends CActiveRecord {
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
         ));
+    }
+    
+    
+    public function hashpassword($password) {
+        return sha1($password);
     }
 
     /**

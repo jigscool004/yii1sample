@@ -24,40 +24,91 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");
+$userAttr = CommonController::getUserList();
+$criteria = new CDbCriteria();
+$criteria->select = 'id,name';
+$criteria->compare('status',1);
+$categoriesArr = CHtml::listData(TaxCategory::model()->findAll($criteria),'id','name');
 ?>
-
-<h1>Manage Tax Rates</h1>
-
-<p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-</p>
-
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
-<div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
-</div><!-- search-form -->
-
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'tax-rate-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'id',
-		'name',
-		'rate',
-		'category_id',
-		'status',
-		'created_by',
-		/*
-		'created_on',
-		'updated_by',
-		'updated_on',
-		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+<div class="box-header with-border">
+        <h3 class="box-title">Manage Tax Rate</h3>
+        <div class="pull-right">
+            <?php echo CHtml::link('<i class="fa fa-plus-square"></i> Add New tax rate',Yii::app()->createUrl('TaxRate/create'))?>
+        </div>
+</div>
+<div class="box-body table-responsive">
+    <?php $this->widget('zii.widgets.grid.CGridView', array_merge(
+ CommonController::customizeGrid(),
+            array(
+        'id'=>'tax-rate-grid',
+        'dataProvider'=>$model->search(),
+        'filter'=>$model,
+        'columns'=>array(
+            'id' => array('name' => 'id','filter' => false,'value' => '$data->id'),
+            'name' => array(
+                'name' => 'name',
+                'value' => '$data->name',
+                'filter' => CHtml::textField('TaxRate[name]',$model->name,array('class' => 'form-control'))
+            ),
+            'rate' => array(
+                'name' => 'Rate(%)',
+                'value' => '$data->rate',
+                'filter' => CHtml::textField('TaxRate[rate]',$model->rate,array('class' => 'form-control'))
+            ),
+            'category_id' => array(
+                'name' => 'Category',
+                'value' => function($data) use ($categoriesArr){
+                     return isset($categoriesArr[$data->category_id]) ? $categoriesArr[$data->category_id] : '' ;
+                },
+                'filter' => CHtml::dropDownList('TaxRate[category_id]',$model->category_id,$categoriesArr,array('class' => 'form-control','empty' => '- Select -')),
+            ),
+           'status' => array(
+                    'name' => 'Status',
+                    'value' => function($data){
+                        return $data->status == 1 ? 'Active' : 'Inactive';
+                    },
+                    'sortable' => true,
+                    'filter' => CHtml::dropDownList('TaxRate[status]',$model->status,array( 1 => 'Active', 0 => 'Inactive'),array('class' => 'form-control','empty' => '- Select -'))   
+                ),
+                 'created_by' => array(
+                    'name' => 'created_by',
+                    'value' => function($data) use ($userAttr){
+                        if (isset($userAttr[$data->id])) {
+                            return $userAttr[$data->id];
+                        }
+                    },
+                    'filter' => CHtml::dropDownList('TaxRate[created_by]',$model->created_by,$userAttr,array('class' => 'form-control','empty' => '- Select-'))
+                ),            
+                'created_on' => array(
+                    'name' => 'created_on',
+                    'value' => function($data) {
+                        if (isset($data->created_on) && $data->created_on != "") {
+                            return date('d-m-Y', strtotime($data->created_on));
+                        }
+                    }
+                ),
+                array(
+                    'class' => 'CButtonColumn',
+                    'template' => '{edit}&nbsp;&nbsp;|&nbsp;&nbsp;{remove}',
+                    'header' => 'Actions',
+                    'buttons' => array(
+                        'edit' => array(
+                            'label' => '<i class="fa fa-pencil-square-o"></i> Edit ',
+                            'options' => array('title' => 'Edit','class' => 'update'),
+                            'url' => 'Yii::app()->createUrl("TaxRate/update",array("id" => $data->id))'
+                        ),
+                        'remove' => array(
+                            'label' => '<i class="fa fa-user-times"></i> Delete',
+                            'url' => 'Yii::app()->createUrl("TaxRate/delete",array("id" => $data->id))',
+                            'options' => array('title' => 'Delete','class' => 'delete'),
+                        )
+                    ),
+                    'htmlOptions' => array('width' => '15%')
+                ),
+          ),
+        )
+          
+       ) 
+    ); ?>
+    
+</div>

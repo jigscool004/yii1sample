@@ -60,16 +60,19 @@ class TaxrateController extends Controller {
         $model = new TaxRate;
 
         // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
+         $this->performAjaxValidation($model);
 
         if (isset($_POST['TaxRate'])) {
+            $_POST['TaxRate']['created_on'] = date('Y-m-d h:i:s');
+            $_POST['TaxRate']['created_by'] = 1;//date('Y-m-d h:i:r');
             $model->attributes = $_POST['TaxRate'];
             if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+                $this->redirect(array('index'));
         }
 
         $this->render('create', array(
             'model' => $model,
+            'taxCategoriesArr' => $this->taxCategory()
         ));
     }
 
@@ -82,16 +85,19 @@ class TaxrateController extends Controller {
         $model = $this->loadModel($id);
 
         // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
+         $this->performAjaxValidation($model);
 
         if (isset($_POST['TaxRate'])) {
+            $_POST['TaxRate']['updated_by'] = date('Y-m-d h:i:s');
+            $_POST['TaxRate']['updated_on'] = 1;//date('Y-m-d h:i:r');
             $model->attributes = $_POST['TaxRate'];
             if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+                $this->redirect(array('index'));
         }
 
         $this->render('update', array(
             'model' => $model,
+            'taxCategoriesArr' => $this->taxCategory()
         ));
     }
 
@@ -111,7 +117,7 @@ class TaxrateController extends Controller {
     /**
      * Lists all models.
      */
-    public function actionIndex() {
+    public function actionIndex1() {
         $dataProvider = new CActiveDataProvider('TaxRate');
         $this->render('index', array(
             'dataProvider' => $dataProvider,
@@ -121,7 +127,7 @@ class TaxrateController extends Controller {
     /**
      * Manages all models.
      */
-    public function actionAdmin() {
+    public function actionIndex() {
         $model = new TaxRate('search');
         $model->unsetAttributes();  // clear any default values
         if (isset($_GET['TaxRate']))
@@ -129,6 +135,7 @@ class TaxrateController extends Controller {
 
         $this->render('admin', array(
             'model' => $model,
+            'taxCategoriesArr' => $this->taxCategory()
         ));
     }
 
@@ -155,6 +162,13 @@ class TaxrateController extends Controller {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
+    }
+    
+    private function taxCategory() {
+        $criteria = new CDbCriteria();
+        $criteria->select = 'id,name';
+        $criteria->compare('status',1);
+        return CHtml::listData(TaxCategory::model()->findAll($criteria),'id','name');
     }
 
 }

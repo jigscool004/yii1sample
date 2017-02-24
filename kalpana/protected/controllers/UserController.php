@@ -58,14 +58,18 @@ class UserController extends Controller {
      */
     public function actionCreate() {
         $model = new User;
-
+        $model->scenario = 'create';
         // Uncomment the following line if AJAX validation is needed
         $this->performAjaxValidation($model);
 
         if (isset($_POST['User'])) {
-            $model->attributes = $_POST['User'];
+            $_POST['User']['hash_password'] = CommonController::hash_password($_POST['User']['hash_password']);
+            $_POST['User']['confirmpassword'] = CommonController::hash_password($_POST['User']['confirmpassword']);
+            $_POST['User']['created_by'] = 1;
+            $_POST['User']['created_on'] = date('Y-m-d H:i:s');
+            $model->attributes = $_POST['User']; ;
             if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+                $this->redirect(array('index'));
         }
 
         $this->render('create', array(
