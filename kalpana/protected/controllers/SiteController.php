@@ -48,7 +48,7 @@ class SiteController extends Controller {
      * Displays the contact page
      */
     public function actionContact() {
-        //$this->layout = '//layouts/column1';
+        $this->layout = '//layouts/column1';
         $model = new ContactForm;
         if (isset($_POST['ContactForm'])) {
             $model->attributes = $_POST['ContactForm'];
@@ -72,6 +72,7 @@ class SiteController extends Controller {
      * Displays the login page
      */
     public function actionLogin() {
+        $this->layout = '//layouts/login';
         $model = new LoginForm;
 
         // if it is ajax validation request
@@ -82,6 +83,7 @@ class SiteController extends Controller {
 
         // collect user input data
         if (isset($_POST['LoginForm'])) {
+            $_POST['LoginForm']['password'] = CommonController::hash_password($_POST['LoginForm']['password']);
             $model->attributes = $_POST['LoginForm'];
             // validate user input and redirect to the previous page if valid
             if ($model->validate() && $model->login())

@@ -2,7 +2,7 @@
 .login-box-body { background-color: rgba(255, 255, 255, 0.6); box-shadow: 0 5px 5px #222222; color: #191818; padding: 6%; }
 .msgWelcome { font-size: 1.5em; margin-bottom: 20px; margin-top: 20px; color: #364d08; text-align: left; background-color: rgba(255, 255, 255, 0.6); padding: 10px; }
 .msgWelcome label { display: block; font-size: 0.8em; font-weight: normal; text-align: left; }
-body.login-page { background-image: url(../../images/bglogin.jpg); background-position: center center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover; }
+body.login-page { background-image: url(../images/bglogin.jpg); background-position: center center; background-repeat: no-repeat; background-attachment: fixed; background-size: cover; }
 
 .checkinView .box-body span {display: block;}
 .invoice {margin: 0 0 20px;}

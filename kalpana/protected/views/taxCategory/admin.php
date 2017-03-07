@@ -45,13 +45,15 @@ $userAttr = CommonController::getUserList();
                     'filter' => false,
                 ),
                 'name' => array(
-                    'name' => 'Name',
+                    'name' => 'name',
+                    'header' => 'Name',
                     'value' => '$data->name',
                     'sortable' => true,
                     'filter' => CHtml::textField('TaxCategory[name]',$model->name,array('class' => 'form-control'))
                 ),
                 'category' => array(
-                    'name' => 'Category',
+                    'name' => 'category',
+                    'header' => 'Category',
                     'value' => function($data){
                         return $data->category == 1 ? 'Guest Check in Tax' : 'Guest Check out Tax';
                     },
@@ -59,7 +61,8 @@ $userAttr = CommonController::getUserList();
                     'filter' => CHtml::dropDownList('TaxCategory[category]',$model->category,array( 1 => 'Guest Check in Tax',2 => 'Guest Check out Tax'),array('class' => 'form-control','empty' => '- Select -'))
                 ),
                 'status' => array(
-                    'name' => 'Status',
+                    'name' => 'status',
+                    'header' => 'Status',
                     'value' => function($data){
                         return $data->status == 1 ? 'Active' : 'Inactive';
                     },
@@ -73,7 +76,7 @@ $userAttr = CommonController::getUserList();
                             return $userAttr[$data->id];
                         }
                     },
-                    'filter' => CHtml::dropDownList('User[created_by]',$model->created_by,$userAttr,array('class' => 'form-control','empty' => '- Select-'))
+                    'filter' => CHtml::dropDownList('TaxCategory[created_by]',$model->created_by,$userAttr,array('class' => 'form-control','empty' => '- Select-'))
                 ),            
                 'created_on' => array(
                     'name' => 'created_on',

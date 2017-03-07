@@ -110,6 +110,7 @@
                                 'items' => array(
                                     array('label' => '<i class="fa fa-fw fa-dot-circle-o"></i> User', 'url' => array('user/index')),
                                     array('label' => '<i class="fa fa-fw fa-dot-circle-o"></i> Role', 'url' => array('role/index')),
+                                    array('label' => '<i class="fa fa-fw fa-dot-circle-o"></i> Role', 'url' => array('equipment/index')),
                                 ),
                             ),
                         ),
