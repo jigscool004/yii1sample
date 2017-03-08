@@ -63,7 +63,7 @@ $('.search-form form').submit(function(){
 				),
 				'field_name' => array(
 					'name' => 'field_name',
-					'header' => 'Field name',
+					'header' => 'Action name',
 					'htmlOptions' => array('width' => '25%'),
 					'value' => '$data->field_name',
 					'filter' => chtml::textField('PageFields[field_name]',$model->field_name,array('class' => 'form-control'))

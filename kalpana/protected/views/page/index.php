@@ -41,24 +41,27 @@ $('.search-form form').submit(function(){
 				'id' => array(
 					'name' => 'id',
 					'value' => '$data->id',
+					'htmlOptions' => array('width' => '5%'),
 					'filter' => chtml::textField('Page[id]',$model->id,array('class' => 'form-control'))
 				),
 				'page_name' => array(
 					'name' => 'page_name',
 					'header' => 'Page Name',
 					'value' => '$data->page_name',
+					'htmlOptions' => array('width' => '25%'),
 					'filter' => chtml::textField('Page[controller_name]',$model->page_name,array('class' => 'form-control'))
 				),
 				'controller_name' => array(
 					'name' => 'controller_name',
 					'header' => 'Controller Name',
+					'htmlOptions' => array('width' => '25%'),
 					'value' => '$data->controller_name',
 					'filter' => chtml::textField('Page[controller_name]',$model->controller_name,array('class' => 'form-control'))
 				),
-				'actions',
 				'status' => array(
 					'header' => 'Status',
 					'name' => 'status',
+					'htmlOptions' => array('width' => '15%'),
 					'value' => 'isset($data->status) && $data->status == 1 ? "Active" : "Inactive"',
 					'filter' => chtml::dropDownList('Page[status]',$model->status,array(1 => 'Active', 0 => 'Inactive'),array('class' => 'form-control','empty' => '-select-'))
 				),
@@ -66,6 +69,7 @@ $('.search-form form').submit(function(){
 					'class' => 'CButtonColumn',
 					'template' => '{edit}&nbsp;&nbsp;|&nbsp;&nbsp;{remove}',
 					'header' => 'Actions',
+					'htmlOptions' => array('width' => '20%'),
 					'buttons' => array(
 						'edit' => array(
 							'label' => '<i class="fa fa-pencil-square-o"></i> Edit ',

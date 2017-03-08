@@ -28,7 +28,7 @@ class Page extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('page_name, actions, controller_name,status', 'required'),
+			array('page_name, controller_name,status', 'required'),
 			array('status', 'numerical', 'integerOnly'=>true),
 			array('page_name', 'length', 'max'=>255),
 			// The following rule is used by search().
@@ -56,8 +56,6 @@ class Page extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'page_name' => 'Page Name',
-			'actions' => 'Actions',
-			'default_action' => 'Default Action',
 			'status' => 'Status',
 		);
 	}
@@ -82,8 +80,7 @@ class Page extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('page_name',$this->page_name,true);
-		$criteria->compare('actions',$this->actions,true);
-		$criteria->compare('default_action',$this->default_action,true);
+		$criteria->compare('controller_name',$this->controller_name,true);
 		$criteria->compare('status',$this->status);
 
 		return new CActiveDataProvider($this, array(

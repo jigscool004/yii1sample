@@ -39,7 +39,7 @@
 		</div>
 	</div>
 	<div class="clearfix"></div>
-	<div class="col-lg-10">
+	<?php /*<div class="col-lg-10">
 		<?php echo $form->labelEx($model,'actions',array('class' => 'col-lg-3')); ?>
 		<div class="col-lg-7">
 			<?php echo $form->textArea($model,'actions',array('rows'=>6, 'cols'=>50,'class' => 'form-control')); ?>
@@ -57,12 +57,12 @@
 		</div>
 
 	</div>
-	<div class="clearfix"></div>
+	<div class="clearfix"></div> */ ?>
 
 	<div class="col-lg-10">
 		<?php echo $form->labelEx($model,'status',array('class' => 'col-lg-3')); ?>
 		<div class="col-lg-7">
-			<?php echo $form->dropDownList($model,'default_action',array( 1 => 'Active', 0 => 'Inactive'),array('empty' => '- Select -','class' => 'form-control')); ?>
+			<?php echo $form->dropDownList($model,'status',array( 1 => 'Active', 0 => 'Inactive'),array('empty' => '- Select -','class' => 'form-control')); ?>
 			<?php echo $form->error($model,'status'); ?>
 		</div>
 	</div>

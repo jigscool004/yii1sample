@@ -52,8 +52,8 @@
 		<div class="col-lg-2"></div>
 		<div class="col-lg-6">
 			<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class' => 'btn btn-primary'));
-
-				echo CHtml::link('Cancel','#',array('class' => 'btn btn-danger ','style' => 'margin-left:10px;'));
+				$link = Yii::app()->createUrl('pageFields/index');
+				echo CHtml::link('Cancel',$link,array('class' => 'btn btn-danger ','style' => 'margin-left:10px;'));
 			?>
 		</div>
 	</div>
