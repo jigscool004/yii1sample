@@ -21,6 +21,6 @@ $this->menu=array(
 </div>
 <div class="box-body">
 	<div class="row">
-<?php $this->renderPartial('_form', array('model'=>$model)); ?>
+<?php $this->renderPartial('_form', array('model'=>$model,'roleAccessArr' => $roleAccessArr)); ?>
 	</div>
 </div>

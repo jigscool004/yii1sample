@@ -67,13 +67,41 @@ class RoleController extends Controller {
 
         if (isset($_POST['Role'])) {
             $model->attributes = $_POST['Role'];
-            if ($model->save())
+            if ($model->save()) {
+                $this->saveRoleAccessData($model->id);
                 $this->redirect(array('index'));
+            }
         }
 
         $this->render('create', array(
             'model' => $model,
         ));
+    }
+
+    /**
+     * @param $role_id
+     */
+    private function saveRoleAccessData($role_id) {
+        $roleAccessArr = array();
+        $criteria = new CDbCriteria();
+        $criteria->compare('role_id',$role_id);
+        RoleAccess::model()->deleteAll($criteria);
+        if (isset($_POST['Role']['page_field_id']) && count($_POST['Role']['page_field_id']) > 0) {
+            foreach($_POST['Role']['page_field_id'] as $page_id => $field_idArr) {
+                foreach($field_idArr as $key => $field_id) {
+                    $roleAccessArr[] = array(
+                        'role_id' => $role_id,
+                        'page_id' => $page_id,
+                        'page_field_id' => $field_id
+                    );
+                }
+            }
+        }
+
+        if (count($roleAccessArr) > 0) {
+            $builder = Yii::app()->db->schema->commandBuilder;
+            $builder->createMultipleInsertCommand('role_access',$roleAccessArr)->execute();
+        }
     }
 
     /**
@@ -85,16 +113,29 @@ class RoleController extends Controller {
         $model = $this->loadModel($id);
 
         // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
+         $this->performAjaxValidation($model);
+
+        $criteria = new CDbCriteria();
+        $criteria->compare('role_id',$id);
+        $roleAccess = RoleAccess::model()->findAll($criteria);//,'page_id','page_field_id');
+
+        $roleAccessArr = array();
+        foreach($roleAccess as $key => $roleaccess_data) {
+            $roleAccessArr[$roleaccess_data->page_id][] = $roleaccess_data->page_field_id;
+        }
 
         if (isset($_POST['Role'])) {
             $model->attributes = $_POST['Role'];
-            if ($model->save())
+            if ($model->save()) {
+                $this->saveRoleAccessData($model->id);
                 $this->redirect(array('index'));
+            }
+
         }
 
         $this->render('update', array(
             'model' => $model,
+            'roleAccessArr' => $roleAccessArr
         ));
     }
 
@@ -165,6 +206,16 @@ class RoleController extends Controller {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
+    }
+
+    public static function roleAccess() {
+        $criteria = new CDbCriteria;
+        $criteria->select = 't.page_name,t.controller_name,t.id,pf.field_name,pf.id AS field_id';
+        $criteria->join = ' INNER JOIN page_fields pf ON pf.page_id = t.id';
+        $criteria->compare('t.status',1);
+        $criteria->compare('pf.status',1);
+        $model = Page::model()->findAll($criteria);
+        return $model;
     }
 
 }

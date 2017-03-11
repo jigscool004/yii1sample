@@ -10,13 +10,14 @@
  * @property string $default_action
  * @property integer $status
  */
-class Page extends CActiveRecord
-{
+class Page extends CActiveRecord {
 	/**
 	 * @return string the associated database table name
 	 */
-	public function tableName()
-	{
+
+
+	public $field_name,$field_id;
+	public function tableName() {
 		return 'page';
 	}
 
