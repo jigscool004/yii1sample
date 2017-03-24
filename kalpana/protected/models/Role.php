@@ -74,7 +74,7 @@ class Role extends CActiveRecord {
         $criteria->compare('id', $this->id);
         $criteria->compare('role', $this->role, true);
         $criteria->compare('status', $this->status);
-        
+
 //        $role = Yii::app()->request->getParam('role');
 //        if (isset($role['name']) && $role['name'] != "") {
 //            $criteria->compare('role', $role['name'], true);

@@ -1,7 +1,6 @@
 <?php
 
 class TaxCategoryController extends Controller {
-
     /**
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
      * using two-column layout. See 'protected/views/layouts/column2.php'.
@@ -61,7 +60,7 @@ class TaxCategoryController extends Controller {
         $model = new TaxCategory;
 
         // Uncomment the following line if AJAX validation is needed
-         $this->performAjaxValidation($model);
+        $this->performAjaxValidation($model);
 
         if (isset($_POST['TaxCategory'])) {
             $_POST['TaxCategory']['created_on'] = date('Y-m-d h:i:s');
@@ -85,7 +84,7 @@ class TaxCategoryController extends Controller {
         $model = $this->loadModel($id);
 
         // Uncomment the following line if AJAX validation is needed
-         $this->performAjaxValidation($model);
+        $this->performAjaxValidation($model);
 
         if (isset($_POST['TaxCategory'])) {
             $_POST['TaxCategory']['updated_on'] = date('Y-m-d h:i:s');

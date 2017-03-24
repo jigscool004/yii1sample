@@ -33,7 +33,7 @@ $this->menu = array(
     <div class="box-body table-responsive">
 
         <?php
-        $this->widget('zii.widgets.grid.CGridView', array_merge(CommonController::customizeGrid(),array(
+        $this->widget('zii.widgets.grid.CGridView', array_merge(CommonController::customizeGrid(), array(
             'id' => 'role-grid',
             'dataProvider' => $model->search(),
             'filter' => $model,
@@ -57,7 +57,7 @@ $this->menu = array(
                         return isset($data->status) && $data->status == 1 ? 'Active' : 'Inactive';
                     },
                     'filter' => CHtml::dropDownList('Role[status]', $model->status, array(1 => 'Active', 0 => 'Inactive'), array('empty' => '- Select role', 'class' => 'form-control')),
-                            'htmlOptions' => array('width' => '35%')
+                    'htmlOptions' => array('width' => '35%')
                 )
                 ,
                 array(
@@ -67,13 +67,13 @@ $this->menu = array(
                     'buttons' => array(
                         'edit' => array(
                             'label' => '<i class="fa fa-pencil-square-o"></i> Edit ',
-                            'options' => array('title' => 'Edit','class' => 'update'),
+                            'options' => array('title' => 'Edit', 'class' => 'update'),
                             'url' => 'Yii::app()->createUrl("role/update",array("id" => $data->id))'
                         ),
                         'remove' => array(
                             'label' => '<i class="fa fa-user-times"></i> Delete',
                             'url' => 'Yii::app()->createUrl("role/delete",array("id" => $data->id))',
-                            'options' => array('title' => 'Delete','class' => 'delete'),
+                            'options' => array('title' => 'Delete', 'class' => 'delete'),
                         )
                     ),
                     'htmlOptions' => array('width' => '15%')

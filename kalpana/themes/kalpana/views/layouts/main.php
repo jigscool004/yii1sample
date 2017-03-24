@@ -14,7 +14,7 @@
         $cs->registerCssFile($baseUrl . '/themes/kalpana/css/skins/skin-blue.min.css');
 
 
-      //  $cs->registerScriptFile($baseUrl . '/themes/kalpana/js/jquery-2.2.3.min.js');
+        //  $cs->registerScriptFile($baseUrl . '/themes/kalpana/js/jquery-2.2.3.min.js');
         $cs->registerScriptFile($baseUrl . '/themes/kalpana/js/bootstrap.min.js');
         $cs->registerScriptFile($baseUrl . '/themes/kalpana/js/app.min.js');
 
@@ -25,7 +25,7 @@
         <meta name="language" content="en">
 
         <style type="text/css">
-            
+
         </style>
         <title><?php echo CHtml::encode($this->pageTitle); ?></title>
     </head>
@@ -68,7 +68,10 @@
                                             <a href="hotel-view.php" class="btn btn-default btn-flat">Profile</a>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                            <?php
+                                            $link = Yii::app()->createUrl('site/logout');
+                                            echo CHtml::link('Logout', $link, array('class' => 'btn btn-default btn-flat'));
+                                            ?>
                                         </div>
                                     </li>
                                 </ul>
@@ -82,7 +85,7 @@
             </header> 
             <aside class="main-sidebar"> 
                 <section class="sidebar"> 
-                    <?php 
+                    <?php
                     $this->widget('zii.widgets.CMenu', array(
                         'id' => 'menu-id',
                         'encodeLabel' => false,
@@ -126,21 +129,21 @@
             <div class="content-wrapper" style="min-height: 355px;">
                 <section class="content-header">
                     <h1><?php echo $this->pageTitle; ?></h1>
-                    <?php 
-                            $this->widget('zii.widgets.CBreadcrumbs',array(
-                                        'links' => $this->breadcrumbs,
-                                         'tagName' => 'ol',
-                                         'htmlOptions' => array('class' => 'breadcrumb') ,
-                                          'homeLink' => CHtml::link('<i class="fa fa-dashboard"></i> Dashboard', array('/site/index')),
-                            ));
+                    <?php
+                    $this->widget('zii.widgets.CBreadcrumbs', array(
+                        'links' => $this->breadcrumbs,
+                        'tagName' => 'ol',
+                        'htmlOptions' => array('class' => 'breadcrumb'),
+                        'homeLink' => CHtml::link('<i class="fa fa-dashboard"></i> Dashboard', array('/site/index')),
+                    ));
                     ?>
-                    
+
                 </section>
 
                 <!-- Content Start -->
                 <section class="content"> 
                     <div class="box box-info">
-                          <?php echo $content; ?>
+                        <?php echo $content; ?>
                     </div>
                 </section>
             </div>

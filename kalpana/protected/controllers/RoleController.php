@@ -64,43 +64,51 @@ class RoleController extends Controller {
 
         // Uncomment the following line if AJAX validation is needed
         $this->performAjaxValidation($model);
-
+        $roleAccess = RoleController::roleAccess();
         if (isset($_POST['Role'])) {
             $model->attributes = $_POST['Role'];
             if ($model->save()) {
-                $this->saveRoleAccessData($model->id);
+                $this->saveRoleAccessData($model->id,$roleAccess);
                 $this->redirect(array('index'));
             }
         }
 
         $this->render('create', array(
             'model' => $model,
+            'roleAccess' => $roleAccess,
         ));
     }
 
     /**
      * @param $role_id
      */
-    private function saveRoleAccessData($role_id) {
-        $roleAccessArr = array();
-        $criteria = new CDbCriteria();
-        $criteria->compare('role_id',$role_id);
-        RoleAccess::model()->deleteAll($criteria);
-        if (isset($_POST['Role']['page_field_id']) && count($_POST['Role']['page_field_id']) > 0) {
-            foreach($_POST['Role']['page_field_id'] as $page_id => $field_idArr) {
-                foreach($field_idArr as $key => $field_id) {
-                    $roleAccessArr[] = array(
-                        'role_id' => $role_id,
-                        'page_id' => $page_id,
-                        'page_field_id' => $field_id
-                    );
-                }
+    private function saveRoleAccessData($role_id,$roleAccess_data) {
+        $pageAccessArr = array();
+        $role = Yii::app()->request->getPost('Role');
+        foreach ($roleAccess_data as $key => $roleAccess) {
+            $accessActionNameArr = $deniedActionNameArr = array();
+            if (isset($role['page_field_id'][$roleAccess->id])) {
+                $actionNameArr = explode(',',$roleAccess->actions_name);
+                $deniedActionNameArr = array_diff($actionNameArr,$role['page_field_id'][$roleAccess->id]);
+                $accessActionNameArr = $role['page_field_id'][$roleAccess->id];
+            } else {
+                $deniedActionNameArr = explode(',',$roleAccess->actions_name);
             }
+
+            $pageAccessArr[$roleAccess->id] = array(
+                'role_id' => $role_id,
+                'controller_name' => $roleAccess->controller_name,
+                'access_list' => count($accessActionNameArr) > 0 ? implode(',',$accessActionNameArr) : '',
+                'denied_list' => count($deniedActionNameArr) > 0 ? implode(',',$deniedActionNameArr) : '',
+            );
         }
 
-        if (count($roleAccessArr) > 0) {
+        $criteria = new CDbCriteria();
+        $criteria->compare('role_id', $role_id);
+        RoleAccess::model()->deleteAll($criteria);
+        if (count($pageAccessArr) > 0) {
             $builder = Yii::app()->db->schema->commandBuilder;
-            $builder->createMultipleInsertCommand('role_access',$roleAccessArr)->execute();
+            $builder->createMultipleInsertCommand('role_access', $pageAccessArr)->execute();
         }
     }
 
@@ -113,29 +121,34 @@ class RoleController extends Controller {
         $model = $this->loadModel($id);
 
         // Uncomment the following line if AJAX validation is needed
-         $this->performAjaxValidation($model);
+        $this->performAjaxValidation($model);
 
         $criteria = new CDbCriteria();
-        $criteria->compare('role_id',$id);
-        $roleAccess = RoleAccess::model()->findAll($criteria);//,'page_id','page_field_id');
-
+        $criteria->compare('role_id', $id);
+        $roleAccess = RoleAccess::model()->findAll($criteria); //,'page_id','page_field_id');
+        $roleAccessData = RoleController::roleAccess();
         $roleAccessArr = array();
-        foreach($roleAccess as $key => $roleaccess_data) {
-            $roleAccessArr[$roleaccess_data->page_id][] = $roleaccess_data->page_field_id;
-        }
 
+        if (count($roleAccess) > 0) {
+            foreach ($roleAccess as $key => $roleaccess_data) {
+             //   echo $roleaccess_data->controller_name . " >>>>>> " . $roleaccess_data->access_list . ' <<<< <hr>';
+                $roleAccessArr[$roleaccess_data->controller_name] = $roleaccess_data->access_list != "" ?
+                                                            explode(',',$roleaccess_data->access_list) : array();
+            }
+        }
+        //echo "<pre>"; print_r($roleAccessArr); echo "</pre>"; exit;
         if (isset($_POST['Role'])) {
             $model->attributes = $_POST['Role'];
             if ($model->save()) {
-                $this->saveRoleAccessData($model->id);
+                $this->saveRoleAccessData($model->id,$roleAccessData);
                 $this->redirect(array('index'));
             }
-
         }
 
         $this->render('update', array(
             'model' => $model,
-            'roleAccessArr' => $roleAccessArr
+            'roleAccessArr' => $roleAccessArr,
+            'roleAccess' => $roleAccessData,
         ));
     }
 
@@ -210,11 +223,12 @@ class RoleController extends Controller {
 
     public static function roleAccess() {
         $criteria = new CDbCriteria;
-        $criteria->select = 't.page_name,t.controller_name,t.id,pf.field_name,pf.id AS field_id';
-        $criteria->join = ' INNER JOIN page_fields pf ON pf.page_id = t.id';
-        $criteria->compare('t.status',1);
-        $criteria->compare('pf.status',1);
+        //$criteria->select = 't.page_name,t.controller_name,t.id,pf.field_name,pf.id AS field_id';
+        //$criteria->join = ' INNER JOIN page_fields pf ON pf.page_id = t.id';
+        $criteria->compare('t.status', 1);
+
         $model = Page::model()->findAll($criteria);
+        
         return $model;
     }
 

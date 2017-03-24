@@ -75,6 +75,10 @@ class SiteController extends Controller {
         $this->layout = '//layouts/login';
         $model = new LoginForm;
 
+        if (!Yii::app()->user->isGuest) {
+            $this->redirect(Yii::app()->user->returnUrl);
+        }
+
         // if it is ajax validation request
         if (isset($_POST['ajax']) && $_POST['ajax'] === 'login-form') {
             echo CActiveForm::validate($model);
@@ -86,6 +90,7 @@ class SiteController extends Controller {
             $_POST['LoginForm']['password'] = CommonController::hash_password($_POST['LoginForm']['password']);
             $model->attributes = $_POST['LoginForm'];
             // validate user input and redirect to the previous page if valid
+
             if ($model->validate() && $model->login())
                 $this->redirect(Yii::app()->user->returnUrl);
         }
@@ -98,7 +103,7 @@ class SiteController extends Controller {
      */
     public function actionLogout() {
         Yii::app()->user->logout();
-        $this->redirect(Yii::app()->homeUrl);
+        $this->redirect('login');
     }
 
 }

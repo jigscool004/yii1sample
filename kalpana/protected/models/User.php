@@ -20,6 +20,7 @@
 class User extends CActiveRecord {
 
     public $confirmpassword;
+
     /**
      * @return string the associated database table name
      */
@@ -34,11 +35,10 @@ class User extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('name, login_username,role_id, email, mobile_no','required','on' => 'create,update'),
-            array('hash_password,confirmpassword','required','on' => 'create'),
-            array('email','email','on' => 'create,update'),
-            array('hash_password', 'compare', 'compareAttribute' => 'confirmpassword','on' => 'create,changepassword'),
-            
+            array('name, login_username,role_id, email, mobile_no', 'required', 'on' => 'create,update'),
+            array('hash_password,confirmpassword', 'required', 'on' => 'create'),
+            array('email', 'email', 'on' => 'create,update'),
+            array('hash_password', 'compare', 'compareAttribute' => 'confirmpassword', 'on' => 'create,changepassword'),
             array('role_id, status, created_by, updated_by', 'numerical', 'integerOnly' => true),
             array('name, email', 'length', 'max' => 100),
             array('login_username', 'length', 'max' => 40),
@@ -115,8 +115,7 @@ class User extends CActiveRecord {
             'criteria' => $criteria,
         ));
     }
-    
-    
+
     public function hashpassword($password) {
         return sha1($password);
     }

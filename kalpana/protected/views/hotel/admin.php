@@ -2,14 +2,14 @@
 /* @var $this HotelController */
 /* @var $model Hotel */
 
-$this->breadcrumbs=array(
-	'Hotels'=>array('index'),
-	'Manage',
+$this->breadcrumbs = array(
+    'Hotels' => array('index'),
+    'Manage',
 );
 
-$this->menu=array(
-	array('label'=>'List Hotel', 'url'=>array('index')),
-	array('label'=>'Create Hotel', 'url'=>array('create')),
+$this->menu = array(
+    array('label' => 'List Hotel', 'url' => array('index')),
+    array('label' => 'Create Hotel', 'url' => array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -29,44 +29,48 @@ $('.search-form form').submit(function(){
 <h1>Manage Hotels</h1>
 
 <p>
-You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
-or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
+    You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>&lt;&gt;</b>
+    or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
 </p>
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+<?php echo CHtml::link('Advanced Search', '#', array('class' => 'search-button')); ?>
 <div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
+    <?php
+    $this->renderPartial('_search', array(
+        'model' => $model,
+    ));
+    ?>
 </div><!-- search-form -->
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'hotel-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'id',
-		'hotel_name',
-		'owner_name',
-		'address_line_one',
-		'address_line_two',
-		'zip_code',
-		/*
-		'address_other',
-		'mobile_no',
-		'hotel_phone_no',
-		'reservation_no',
-		'email',
-		'website',
-		'check_in',
-		'check_out',
-		'creatd_on',
-		'created_by',
-		'updated_on',
-		'updated_by',
-		*/
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+<?php
+$this->widget('zii.widgets.grid.CGridView', array(
+    'id' => 'hotel-grid',
+    'dataProvider' => $model->search(),
+    'filter' => $model,
+    'columns' => array(
+        'id',
+        'hotel_name',
+        'owner_name',
+        'address_line_one',
+        'address_line_two',
+        'zip_code',
+        /*
+          'address_other',
+          'mobile_no',
+          'hotel_phone_no',
+          'reservation_no',
+          'email',
+          'website',
+          'check_in',
+          'check_out',
+          'creatd_on',
+          'created_by',
+          'updated_on',
+          'updated_by',
+         */
+        array(
+            'class' => 'CButtonColumn',
+        ),
+    ),
+));
+?>

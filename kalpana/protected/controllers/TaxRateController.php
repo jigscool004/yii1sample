@@ -60,11 +60,11 @@ class TaxrateController extends Controller {
         $model = new TaxRate;
 
         // Uncomment the following line if AJAX validation is needed
-         $this->performAjaxValidation($model);
+        $this->performAjaxValidation($model);
 
         if (isset($_POST['TaxRate'])) {
             $_POST['TaxRate']['created_on'] = date('Y-m-d h:i:s');
-            $_POST['TaxRate']['created_by'] = 1;//date('Y-m-d h:i:r');
+            $_POST['TaxRate']['created_by'] = 1; //date('Y-m-d h:i:r');
             $model->attributes = $_POST['TaxRate'];
             if ($model->save())
                 $this->redirect(array('index'));
@@ -85,11 +85,11 @@ class TaxrateController extends Controller {
         $model = $this->loadModel($id);
 
         // Uncomment the following line if AJAX validation is needed
-         $this->performAjaxValidation($model);
+        $this->performAjaxValidation($model);
 
         if (isset($_POST['TaxRate'])) {
             $_POST['TaxRate']['updated_by'] = date('Y-m-d h:i:s');
-            $_POST['TaxRate']['updated_on'] = 1;//date('Y-m-d h:i:r');
+            $_POST['TaxRate']['updated_on'] = 1; //date('Y-m-d h:i:r');
             $model->attributes = $_POST['TaxRate'];
             if ($model->save())
                 $this->redirect(array('index'));
@@ -163,12 +163,12 @@ class TaxrateController extends Controller {
             Yii::app()->end();
         }
     }
-    
+
     private function taxCategory() {
         $criteria = new CDbCriteria();
         $criteria->select = 'id,name';
-        $criteria->compare('status',1);
-        return CHtml::listData(TaxCategory::model()->findAll($criteria),'id','name');
+        $criteria->compare('status', 1);
+        return CHtml::listData(TaxCategory::model()->findAll($criteria), 'id', 'name');
     }
 
 }

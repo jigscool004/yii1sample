@@ -65,8 +65,8 @@ class HotelController extends Controller {
         if (isset($_POST['Hotel'])) {
             $_POST['Hotel']['creatd_on'] = date('Y-m-d H:i:s');
             $_POST['Hotel']['created_by'] = 1;
-            
-            
+
+
             $model->attributes = $_POST['Hotel'];
             if ($model->save())
                 $this->redirect(array('view', 'id' => $model->id));
@@ -86,7 +86,7 @@ class HotelController extends Controller {
         $model = $this->loadModel($id);
 
         // Uncomment the following line if AJAX validation is needed
-         $this->performAjaxValidation($model);
+        $this->performAjaxValidation($model);
 
         if (isset($_POST['Hotel'])) {
             $_POST['Hotel']['updated_on'] = date('Y-m-d H:i:s');

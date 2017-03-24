@@ -23,11 +23,13 @@ $('#rolesearch').submit(function(){
 });
 ");
 ?>
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'action'=>Yii::app()->createUrl($this->route),
-	'method'=>'get',
+<?php
+$form = $this->beginWidget('CActiveForm', array(
+    'action' => Yii::app()->createUrl($this->route),
+    'method' => 'get',
     'id' => 'rolesearch'
-)); ?>
+        ));
+?>
 <div class='role'>
     <div class='box-header'>
         <h1 class='box-title'>Roles</h1>
@@ -49,7 +51,7 @@ $('#rolesearch').submit(function(){
                 array(
                     'name' => 'role',
                     'value' => '$data->role',
-                    'filter' => CHtml::textField('role[name]',isset($_REQUEST['role']['name']) ? $_REQUEST['role']['name'] :'',array('class' => 'form-control'))
+                    'filter' => CHtml::textField('role[name]', isset($_REQUEST['role']['name']) ? $_REQUEST['role']['name'] : '', array('class' => 'form-control'))
                 ),
                 array(
                     'name' => 'status',
@@ -57,7 +59,7 @@ $('#rolesearch').submit(function(){
                     'value' => function($data) {
                         return isset($data->status) && $data->status == 1 ? 'Active' : 'Inactive';
                     },
-                    'filter' => CHtml::dropDownList('role[name]',isset($_REQUEST['role']['status']) ? $_REQUEST['role']['status'] :'',array(1 => 'Active', 0 => 'Inactive'),array('empty' => '- Select role','class' => 'form-control'))
+                    'filter' => CHtml::dropDownList('role[name]', isset($_REQUEST['role']['status']) ? $_REQUEST['role']['status'] : '', array(1 => 'Active', 0 => 'Inactive'), array('empty' => '- Select role', 'class' => 'form-control'))
                 )
             )
         ));

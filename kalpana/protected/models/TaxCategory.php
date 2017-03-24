@@ -31,7 +31,7 @@ class TaxCategory extends CActiveRecord {
         return array(
             array('name, category, status', 'required'),
             array('category, status', 'numerical', 'integerOnly' => true),
-            array('created_on,category, status, created_by, updated_by','safe'),
+            array('created_on,category, status, created_by, updated_by', 'safe'),
             array('name', 'length', 'max' => 255),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.

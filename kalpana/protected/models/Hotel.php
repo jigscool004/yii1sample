@@ -49,7 +49,7 @@ class Hotel extends CActiveRecord {
             array('email', 'length', 'max' => 60),
             array('email', 'email'),
             array('website', 'url'),
-            array('creatd_on,updated_on','safe'),
+            array('creatd_on,updated_on', 'safe'),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
             array('id, hotel_name, owner_name, address_line_one, address_line_two, zip_code, address_other, mobile_no, hotel_phone_no, reservation_no, email, website, check_in, check_out, creatd_on, created_by, updated_on, updated_by', 'safe', 'on' => 'search'),
