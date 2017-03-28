@@ -49,18 +49,23 @@ class Controller extends CController {
         }
         $controllerId = Yii::app()->controller->id;
 
+
         $accessArr[] = array(
             'allow',
             'actions' => $pageAccessArr[$controllerId]['access'],
             'users' => array('*')
         );
 
-        $accessArr[] = array(
-            'deny',
-            'actions' => $pageAccessArr[$controllerId]['deny'],
-            'users' => array('*')
-        );
+        if (count($pageAccessArr[$controllerId]['deny']) > 0) {
+            $accessArr[] = array(
+                'deny',
+                'actions' => $pageAccessArr[$controllerId]['deny'],
+                'users' => array('*')
+            );
+        }
 
+
+        
 
         //echo "<pre>"; print_r($accessArr); echo "</pre>";
         return $accessArr;
@@ -96,11 +101,12 @@ class Controller extends CController {
         $controllerName = Yii::app()->controller->id;
         $actionUrl = $controllerName . '/' . $action->id;
         $actionurlArr = array(
-            //'site/login',
+            'site/login',
             'site/logout'
         );
+        //var_dump(Yii::app()->user->isGuest);
         if (Yii::app()->user->isGuest) {
-            if (in_array($actionUrl, $actionurlArr)) {
+            if (!in_array($actionUrl, $actionurlArr)) {
                 $this->redirect(Yii::app()->createUrl('site/login'));
             }
         }

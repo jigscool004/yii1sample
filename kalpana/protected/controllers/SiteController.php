@@ -4,6 +4,17 @@ class SiteController extends Controller {
 
     public $layouts = '//layouts/main';
 
+    public function accessRules() {
+
+        return array(
+            array(
+                'allow',
+                'actions' => array('login','logout'),
+                'users' => array('*')
+            )
+        );
+    }
+
     /**
      * Declares class-based actions.
      */

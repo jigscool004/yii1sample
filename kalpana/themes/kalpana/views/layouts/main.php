@@ -16,6 +16,7 @@
 
         //  $cs->registerScriptFile($baseUrl . '/themes/kalpana/js/jquery-2.2.3.min.js');
         $cs->registerScriptFile($baseUrl . '/themes/kalpana/js/bootstrap.min.js');
+        $cs->registerScriptFile($baseUrl . '/themes/kalpana/js/bootstrap-timepicker.js');
         $cs->registerScriptFile($baseUrl . '/themes/kalpana/js/app.min.js');
 
 
@@ -95,8 +96,8 @@
                                 'submenuOptions' => array('class' => 'treeview-menu', 'id' => 'submenu-dd'),
                                 'itemOptions' => array('class' => 'treeview'),
                                 'items' => array(
-                                    array('label' => '<i class="fa fa-fw fa-dot-circle-o"></i> Guest Check In ', 'url' => array('guest/checkin')),
-                                    array('label' => '<i class="fa fa-fw fa-dot-circle-o"></i> Guest Check Out', 'url' => array('guest/checkout')),
+                                    array('label' => '<i class="fa fa-fw fa-dot-circle-o"></i> Guest Check In ', 'url' => array('guestDetail/index')),
+                                    array('label' => '<i class="fa fa-fw fa-dot-circle-o"></i> Guest Check Out', 'url' => array('guestDetail/checkout')),
                                 ),
                             ),
                             array('label' => '<i class="fa fa-list"></i> Property', 'url' => array('user/index'),

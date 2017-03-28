@@ -53,8 +53,9 @@ class GuestDetail extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('guest_id, checkin_date, checkin_time, checkout_date, checkout_time, adult, child, first_name, last_name, mobile_no, landline_no, gender, address_line1, address_line2, zipcode, state, email_id, license_no, adharecard_no, passport_no, description, photos, room_rate, hotel_tax, advance_amount, debit_amount,room_id', 'required'),
+            array('checkin_date, checkin_time, adult, child, first_name, last_name, mobile_no, landline_no, gender, address_line1, address_line2, zipcode, state, email_id, license_no, adharecard_no, passport_no, description,  room_rate, hotel_tax, advance_amount, debit_amount,room_id', 'required'),
             array('is_checkout, adult, child, created_by, updated_by', 'numerical', 'integerOnly' => true),
+            array('email_id','email'),
             array('room_rate, hotel_tax, advance_amount, debit_amount', 'numerical'),
             array('guest_id, photos', 'length', 'max' => 255),
             array('first_name, last_name, email_id', 'length', 'max' => 50),
@@ -65,7 +66,7 @@ class GuestDetail extends CActiveRecord {
             array('license_no, adharecard_no, passport_no', 'length', 'max' => 30),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, guest_id, checkin_date, checkin_time, checkout_date, checkout_time, is_checkout, adult, child, first_name, last_name, mobile_no, landline_no, gender, address_line1, address_line2, zipcode, state, email_id, license_no, adharecard_no, passport_no, description, photos, room_rate, hotel_tax, advance_amount, debit_amount, created_by, created_on, updated_by, updated_on', 'safe', 'on' => 'search'),
+            array('id, guest_id, checkin_date, checkin_time, checkout_date, checkout_time, is_checkout, adult, child, first_name, last_name, mobile_no, landline_no, gender, address_line1, address_line2, zipcode, state, email_id, license_no, adharecard_no, passport_no, description, photos, room_rate, hotel_tax, advance_amount, debit_amount, created_by, created_on, updated_by, updated_on,created_on', 'safe'),
         );
     }
 
@@ -76,6 +77,7 @@ class GuestDetail extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
+            'Room'=>array(self::BELONGS_TO, 'Room', 'room_id'),
         );
     }
 
@@ -109,7 +111,7 @@ class GuestDetail extends CActiveRecord {
             'description' => 'Description',
             'photos' => 'Photos',
             'room_rate' => 'Room Rate',
-            'hotel_tax' => 'Hotel Tax',
+            'hotel_tax' => 'Hotel Tax (%)',
             'advance_amount' => 'Advance Amount',
             'debit_amount' => 'Debit Amount',
             'created_by' => 'Created By',
@@ -143,7 +145,10 @@ class GuestDetail extends CActiveRecord {
         $criteria->compare('checkin_time', $this->checkin_time, true);
         $criteria->compare('checkout_date', $this->checkout_date, true);
         $criteria->compare('checkout_time', $this->checkout_time, true);
-        $criteria->compare('is_checkout', $this->is_checkout);
+        if (isset($_GET['checkout']) && strtolower($_GET['checkout']) == 'y') {
+            $criteria->compare('is_checkout', 1);    
+        }
+        
         $criteria->compare('adult', $this->adult);
         $criteria->compare('child', $this->child);
         $criteria->compare('first_name', $this->first_name, true);
@@ -169,7 +174,6 @@ class GuestDetail extends CActiveRecord {
         $criteria->compare('created_on', $this->created_on, true);
         $criteria->compare('updated_by', $this->updated_by);
         $criteria->compare('updated_on', $this->updated_on, true);
-
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
         ));

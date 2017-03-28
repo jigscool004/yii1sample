@@ -4,7 +4,7 @@
 
 $this->breadcrumbs = array(
     'Guest Details' => array('index'),
-    $model->id,
+    $model->first_name . ' ' . $model->last_name,
 );
 
 $this->menu = array(
@@ -15,45 +15,368 @@ $this->menu = array(
     array('label' => 'Manage GuestDetail', 'url' => array('admin')),
 );
 ?>
+<style>
+    .form-group label {display:block;}
+</style>
 
-<h1>View GuestDetail #<?php echo $model->id; ?></h1>
+<div class='checkinView'>
+    <?php /*
+    <div class='box-header'>
+        <h1 class='box-title'>Guest Details #<?php echo $model->first_name . ' ' . $model->last_name; ?></h1>
+        <div class="pull-right">
+            <?php echo CHtml::link('<i class="fa fa-plus-square"></i> Back', Yii::app()->createUrl('guestDetail/')) ?>
+        </div>
+    </div>
+    */?>
 
-<?php
-$this->widget('zii.widgets.CDetailView', array(
-    'data' => $model,
-    'attributes' => array(
-        'id',
-        'guest_id',
-        'checkin_date',
-        'checkin_time',
-        'checkout_date',
-        'checkout_time',
-        'is_checkout',
-        'adult',
-        'child',
-        'first_name',
-        'last_name',
-        'mobile_no',
-        'landline_no',
-        'gender',
-        'address_line1',
-        'address_line2',
-        'zipcode',
-        'state',
-        'email_id',
-        'license_no',
-        'adharecard_no',
-        'passport_no',
-        'description',
-        'photos',
-        'room_rate',
-        'hotel_tax',
-        'advance_amount',
-        'debit_amount',
-        'created_by',
-        'created_on',
-        'updated_by',
-        'updated_on',
-    ),
-));
-?>
+      <div class="panel panel-default" >
+          <div class="panel-heading">
+              <div class="panel-title">Guest Detail 
+                <div class="pull-right">
+                  <?php echo CHtml::link('<i class="fa fa-plus-square"></i> Back', Yii::app()->createUrl('guestDetail/')) ?>
+                </div>
+              </div>
+          </div>
+          <div class="panel-body">
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <div class="form-group">
+                <label >Guest Id</label>
+                <span><?php echo $model->guest_id; ?></span>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <div class="form-group">
+                <label >Guest Name</label>
+                <span><?php echo $model->first_name . ' ' . $model->last_name; ?></span>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <div class="form-group">
+                <label >Mobile no</label>
+                <span><?php echo $model->mobile_no; ?></span>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <div class="form-group">
+                <label >Landline no</label>
+                <span><?php echo $model->landline_no; ?></span>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <div class="form-group">
+                <label >Address line 1</label>
+                <span>
+                    <?php echo $model->address_line1 ;
+                    ?>
+                </span>
+              </div>
+            </div>
+              <div class="col-xs-6 col-sm-6 col-md-3">
+                  <div class="form-group">
+                      <label >Address line 2</label>
+                <span>
+                    <?php echo $model->address_line2 ;
+                    ?>
+                </span>
+                  </div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-3">
+                  <div class="form-group">
+                      <label>Zipcode</label>
+                      <span><?php echo $model->zipcode; ?></span>
+                  </div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-md-3">
+                  <div class="form-group">
+                      <label>State</label>
+                      <span><?php echo $model->state; ?></span>
+                  </div>
+              </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                  <div class="form-group">
+                      <label>E-mail</label>
+                      <span><?php echo $model->email_id; ?></span>
+                  </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                  <div class="form-group">
+                      <label>Licence No</label>
+                      <span><?php echo $model->license_no; ?></span>
+                  </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <div class="form-group">
+                  <label>Adharcard no</label>
+                  <span><?php echo $model->adharecard_no; ?></span>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+              <div class="form-group">
+                  <label>Passport no</label>
+                  <span><?php echo $model->passport_no; ?></span>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <label>Comments</label>
+                <div class="clearfix"></div>
+                <span><?php echo $model->description?></span>
+            </div>
+          </div>
+      </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="panel-title">Reservation Details</div>
+        </div>
+        <div class="panel-body">
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label>Checkin Date</label>
+                    <span><?php echo isset($model->checkin_date) && $model->checkin_date != '' ? date('d-m-Y',strtotime($model->checkin_date)) : 'N/A';?></span>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label>Checkin Time</label>
+                    <span><?php echo isset($model->checkin_time) && $model->checkin_time != ''? $model->checkin_time : 'N/A';?></span>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label>Checkout Date</label>
+                    <span><?php echo isset($model->checkout_date) && $model->checkout_date != '' ? date('d-m-Y',strtotime($model->checkout_date)) : 'N/A';?></span>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label>Checkout Time</label>
+                    <span><?php echo isset($model->checkout_time) && $model->checkout_time != '' ? $model->checkout_time : 'N/A'?></span>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label>Adults</label>
+                    <span><?php echo isset($model->adult) && $model->adult != '' ? $model->adult : '0'?></span>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label>Child</label>
+                    <span><?php echo isset($model->child) && $model->child != '' ? $model->child : '0'?></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default" >
+        <div class="panel-heading">
+            <div class="panel-title">Guest Amount Details</div>
+        </div>
+        <div class="panel-body">
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label>Room Rate</label>
+                    <span><?php echo $model->room_rate; ?></span>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label>Hotel Tax</label>
+                    <span><?php echo $model->hotel_tax; ?></span>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label>Advance Amount</label>
+                    <span><?php echo $model->advance_amount; ?></span>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label>Debit Amount</label>
+                    <span><?php echo $model->debit_amount; ?></span>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label>Total Amount (Net)</label>
+                    <span>
+                        <?php
+                            echo $model->room_rate + ($model->room_rate * $model->hotel_tax / 100);
+                        ?>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default" >
+        <div class="panel-heading">
+            <div class="panel-title">Room Details</div>
+        </div>
+        <div class="panel-body">
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label>Room No</label>
+                    <span>
+                        <?php
+                            echo $model->Room->room_no;
+                        ?>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label>Room Name</label>
+                    <span>
+                        <?php
+                            echo $model->Room->room_name;
+                        ?>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label>Floor No</label>
+                    <span>
+                        <?php
+                            echo $model->Room->floor_no;
+                        ?>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label>Single Bed</label>
+                    <span>
+                        <?php
+                            echo $model->Room->single_bed;
+                        ?>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label>Double Bed</label>
+                    <span>
+                        <?php
+                            echo $model->Room->double_bed;
+                        ?>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label>Extra Bed</label>
+                    <span>
+                        <?php
+                            echo $model->Room->extra_bed;
+                        ?>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-3">
+                <div class="form-group">
+                    <label>Equipments</label>
+                    <span>
+                        <?php
+                            if (isset($model->Room->equipment_id) && $model->Room->equipment_id != '') {
+                                $criteria = new CDbCriteria();
+                                $criteria->select = 'GROUP_CONCAT(name) AS name';
+                                $criteria->addCondition('id IN ('.$model->Room->equipment_id.')');
+                                $equipments = Equipment::model()->find($criteria);
+                                if (isset($equipments->name)) {
+                                    echo $equipments->name;
+                                } else {
+                                    echo "Not available";
+                                }
+                            } else {
+                                echo "Not available";
+                            }
+                        ?>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <label for="">Description</label>
+                    <span>
+                        <?php echo $model->Room->description?>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default" >
+        <div class="panel-heading">
+            <div class="panel-title">Upload Images</div>
+        </div>
+        <div class="panel-body">
+            <?php
+                //echo ;
+                $photos = $model->photos;
+                $path = Yii::app()->baseUrl .'/upload/guest_photos/';
+                    ///Yii::getPathOfAlias('webroot') .
+
+                if ($photos != '') {
+                    foreach (explode(',',$photos) as $key => $photo) {
+                       ?>
+                  <div class="col-sm-3">
+                      <img src="<?php echo $path . $photo?>" alt="Image" class="img-responsive">
+                  </div>
+            <?php
+                    }
+                }
+
+            ?>
+        </div>
+    </div>
+    <div class="panel panel-default" >
+        <div class="panel-heading">
+            <div class="panel-title"><i class="fa fa-glass"></i> Guest Order Details
+                <div class="pull-right">
+                    <button type="button" class="btn btn-primary btn-xs" id="addorder" data-toggle="modal" data-target="#myModal">
+                        <i class="fa fa-plus-square"></i> Add order
+                    </button>
+                    <?php
+                        //Yii::app()->createUrl('guestOrder/create')
+                    /*    echo CHtml::link('<i class="fa fa-plus-square"></i> Add order','#'
+                        ,array(
+                        'class' => 'addOrder', 'id' => 'addorder',
+                        'data-toggle' => 'model', 'data-target' => '#myModal'
+                    ));*/
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+        </div>
+    </div>
+ </div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add new order</h4>
+            </div>
+            <div class="modal-body orderformview">
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#addorder").on('click',function(){
+            $.ajax({
+                'url':'<?php echo Yii::app()->createUrl('guestOrder/create');?>',
+                'type':'post',
+                'success':function(data) {
+                    if (data != '') {
+                        $('.orderformview').html(data);
+                    }
+                }
+            });
+        });
+    });
+</script>

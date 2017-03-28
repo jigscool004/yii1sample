@@ -23,34 +23,19 @@ class GuestDetailController extends Controller {
      * @return array access control rules
      */
     public function accessRules() {
-
-        //parent::accessRules();
-        $criteria = new CDbCriteria();
-        $criteria->select = 't.id,t.controller_name,pf.field_name,pf.id  as field_id';
-        $criteria->join = ' LEFT JOIN page_fields pf ON t.id = pf.page_id';
-        $criteria->compare('pf.status',1);
-        $criteria->compare('t.status',1);
-
-        $getPageAccessList = Page::model()->findAll($criteria);
-
-        
-
-        //foreach($getPageAccessList as )
-        echo "<pre>"; print_r($getPageAccessList); echo "</pre>";
-
-        return array(
-            array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'index', 'view'),
-                'users' => array('@'),
-            ),
-            array('allow', // allow admin user to perform 'admin' and 'delete' actions
-                'actions' => array('admin', 'delete'),
-                'users' => array('admin'),
-            ),
-            array('deny', // deny all users
-                'users' => array('*'),
-            ),
+        $data = array();
+        $data = array(
+            array(
+                'allow',
+                'actions' => array('GetRoomList'),
+                'users' => array('*')
+            )
         );
+        $data1 = array_merge($data,parent::accessRules());
+
+
+        //echo "<pre>"; print_r($data1); echo "</pre>"; exit;
+        return $data1;
     }
 
     /**
@@ -71,17 +56,48 @@ class GuestDetailController extends Controller {
         $model = new GuestDetail;
 
         // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
+         $this->performAjaxValidation($model);
 
         if (isset($_POST['GuestDetail'])) {
+
+            $_POST['GuestDetail']['photos'] = $this->uploadFile($model);
+            $_POST['GuestDetail']['created_by'] = YII::app()->user->getId();
+            $_POST['GuestDetail']['created_on'] = date('Y-m-d h:i:s');
+            $_POST['GuestDetail']['checkin_date'] = isset($_POST['GuestDetail']['checkin_date']) ? date('Y-m-d',strtotime($_POST['GuestDetail']['checkin_date'])) :'';
             $model->attributes = $_POST['GuestDetail'];
-            if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+            if ($model->save()) {
+                $guestDetail = GuestDetail::model()->findByPk($model->id);
+                $guestDetail->guest_id = str_pad($guestDetail->id, 5, '0', STR_PAD_LEFT);
+                $guestDetail->save();
+                $this->redirect(array('index'));
+            }
         }
 
         $this->render('create', array(
             'model' => $model,
         ));
+    }
+
+    public function uploadFile($model) {
+        $photos = CUploadedFile::getInstancesByName('GuestDetail[photos]');
+        $photoNameArr = array();
+
+        if (count($photos) > 0) {
+            foreach($photos as $key => $pic) {
+                $imgPath = Yii::getPathOfAlias('webroot') .'/upload/guest_photos/';
+                $isUpload = $pic->saveAs($imgPath .$pic->name);
+                if ($isUpload) {
+                    $photoNameArr[] = $pic->name;
+
+                }
+            }
+        }
+        if (isset($model->photos) && $model->photos != '') {
+            $previousPhoto = explode(',',$model->photos);
+            $photoNameArr = array_merge($photoNameArr,$previousPhoto);
+        }
+        
+        return count($photoNameArr) > 0 ? implode(',',$photoNameArr) : '';
     }
 
     /**
@@ -93,14 +109,18 @@ class GuestDetailController extends Controller {
         $model = $this->loadModel($id);
 
         // Uncomment the following line if AJAX validation is needed
-        // $this->performAjaxValidation($model);
+        $this->performAjaxValidation($model);
 
         if (isset($_POST['GuestDetail'])) {
+            $_POST['GuestDetail']['photos'] = $this->uploadFile($model);
+            $_POST['GuestDetail']['updated_by'] = YII::app()->user->getId();
+            $_POST['GuestDetail']['updated_on'] = date('Y-m-d h:i:s');
+            $_POST['GuestDetail']['checkin_date'] = isset($_POST['GuestDetail']['checkin_date']) ? date('Y-m-d',strtotime($_POST['GuestDetail']['checkin_date'])) :'';
             $model->attributes = $_POST['GuestDetail'];
             if ($model->save())
-                $this->redirect(array('view', 'id' => $model->id));
+                $this->redirect(array('index'));
         }
-
+        
         $this->render('update', array(
             'model' => $model,
         ));
@@ -123,10 +143,23 @@ class GuestDetailController extends Controller {
      * Lists all models.
      */
     public function actionIndex() {
-        $dataProvider = new CActiveDataProvider('GuestDetail');
+        $model = new GuestDetail('search');
+        $model->unsetAttributes();  // clear any default values
+        if (isset($_GET['GuestDetail']))
+            $model->attributes = $_GET['GuestDetail'];
+
+        $ischeckout = 0;
+        if (isset($_GET['checkout']) && strtolower($_GET['checkout']) == 'y') {
+            $ischeckout = 1;
+        }
         $this->render('index', array(
-            'dataProvider' => $dataProvider,
+            'model' => $model,
+            'ischeckout' => $ischeckout,
         ));
+    }
+
+    public function actionCheckout() {
+        $this->render('checkout');
     }
 
     /**
@@ -135,8 +168,11 @@ class GuestDetailController extends Controller {
     public function actionAdmin() {
         $model = new GuestDetail('search');
         $model->unsetAttributes();  // clear any default values
+        
         if (isset($_GET['GuestDetail']))
             $model->attributes = $_GET['GuestDetail'];
+
+        
 
         $this->render('admin', array(
             'model' => $model,
@@ -172,11 +208,36 @@ class GuestDetailController extends Controller {
         $criteria = new CDbCriteria(); //equipment_id	
         $criteria->select = 't.*,GROUP_CONCAT(e.name) AS equipment_name';
         $criteria->join = ' JOIN equipment e ON FIND_IN_SET(e.id,t.equipment_id)';
+        //$criteria->join .= ' JOIN guest_detail gd ON gd.room_id != t.id';
         if ($id != '') {
-            $criteria->compare('id', $id);
+            $criteria->compare('t.id', $id);
+        } else {
+            $criteria->addCondition('t.id NOT IN (SELECT DISTINCT room_id FROM guest_detail)');
         }
         $criteria->group = 't.id';
-        return Room::model()->findAll($criteria);
+        $data = Room::model()->findAll($criteria);
+        return $data;
+    }
+
+    public function ActionGetRoomList($id) {
+        $criteria = new CDbCriteria();
+        $criteria->select = 't.*, GROUP_CONCAT(e.name) AS equipment_name';
+        $criteria->compare('t.id',$id);
+        $criteria->join = ' LEFT JOIN equipment e ON FIND_IN_SET(e.id,t.equipment_id)';
+        $roomDetail = Room::model()->find($criteria);
+        $roomDetailArr = array(
+            'room_no' => $roomDetail->room_name,
+            'floor_no' => $roomDetail->floor_no,
+            'room_name' => $roomDetail->room_name,
+            'single_bed' => $roomDetail->single_bed,
+            'double_bed' => $roomDetail->double_bed,
+            'extra_bed' => $roomDetail->extra_bed,
+            'equipment' => $roomDetail->equipment_name,
+            'room_rate' => $roomDetail->room_rate,
+
+        );
+
+        Yii::app()->end();
     }
 
 }
