@@ -24,9 +24,9 @@ class GuestOrderController extends Controller
 	 * This method is used by the 'accessControl' filter.
 	 * @return array access control rules
 	 */
-	public function accessRules()
-	{
-		return array(
+	public function accessRules() {
+		return parent::accessRules();
+		/*return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view'),
 				'users'=>array('*'),
@@ -42,7 +42,7 @@ class GuestOrderController extends Controller
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
-		);
+		);*/
 	}
 
 	/**
@@ -60,22 +60,35 @@ class GuestOrderController extends Controller
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
-	{
+	public function actionCreate($id) {
 		$model=new GuestOrder;
 
 		// Uncomment the following line if AJAX validation is needed
-		 $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 		$this->layout = "//layouts/ajax";
+
 		if(isset($_POST['GuestOrder']))
 		{
+			$_POST['GuestOrder']['order_date'] = isset($_POST['GuestOrder']['order_date']) && $_POST['GuestOrder']['order_date'] != ''?
+													date('Y-m-d',strtotime($_POST['GuestOrder']['order_date'])) : '';
+
+			$_POST['GuestOrder']['created_on'] = date('Y-m-d');
+			$_POST['GuestOrder']['created_by'] = Yii::app()->user->getId();
 			$model->attributes=$_POST['GuestOrder'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+
+			if($model->save()) {
+				echo 1;
+				Yii::app()->end();
+			} else {
+				echo 0;
+				Yii::app()->end();
+			}
+				//$this->redirect(array('view','id'=>$model->id));
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
+			'id' => $id,
 		));
 	}
 
@@ -84,22 +97,34 @@ class GuestOrderController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate($id)
-	{
+	public function actionUpdate($id) {
 		$model=$this->loadModel($id);
-
+		$this->layout = "//layouts/ajax";
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		 $this->performAjaxValidation($model);
 
-		if(isset($_POST['GuestOrder']))
-		{
+		if(isset($_POST['GuestOrder'])) {
+			$guest_id = $model->guest_id;
+			$_POST['GuestOrder']['order_date'] = isset($_POST['GuestOrder']['order_date']) && $_POST['GuestOrder']['order_date'] != "" ?
+				date('Y-m-d',strtotime($_POST['GuestOrder']['order_date'])) : '';
 			$model->attributes=$_POST['GuestOrder'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->updated_by = Yii::app()->user->getId();
+			$model->updated_on = date('Y-m-d H:i:s');
+			$model->guest_id = $guest_id;
+			if($model->save()) {
+				echo 1;
+			} else {
+				echo 0;
+			}
+			Yii::app()->end();
+			//	$this->redirect(array('view','id'=>$model->id));
+			
+			
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
+			'id' => $id,
 		));
 	}
 

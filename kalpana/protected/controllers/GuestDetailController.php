@@ -43,8 +43,14 @@ class GuestDetailController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
+        $orderModel=new GuestOrder('search');
+        $orderModel->unsetAttributes();  // clear any default values
+        if(isset($_GET['GuestOrder'])) {
+            $orderModel->attributes=$_GET['GuestOrder'];
+        }
         $this->render('view', array(
             'model' => $this->loadModel($id),
+            'orderModel' => $orderModel,
         ));
     }
 
@@ -152,9 +158,13 @@ class GuestDetailController extends Controller {
         if (isset($_GET['checkout']) && strtolower($_GET['checkout']) == 'y') {
             $ischeckout = 1;
         }
+
+
+
         $this->render('index', array(
             'model' => $model,
             'ischeckout' => $ischeckout,
+
         ));
     }
 

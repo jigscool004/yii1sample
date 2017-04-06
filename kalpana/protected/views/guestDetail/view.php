@@ -1,3 +1,4 @@
+<div id="ajax-modal" class="modal hide fade" tabindex="-1"></div>
 <?php
 /* @var $this GuestDetailController */
 /* @var $model GuestDetail */
@@ -329,30 +330,29 @@ $this->menu = array(
             ?>
         </div>
     </div>
+    <div class="panel panel-default orderHtml">
+
+    </div>
+
     <div class="panel panel-default" >
         <div class="panel-heading">
+
             <div class="panel-title"><i class="fa fa-glass"></i> Guest Order Details
                 <div class="pull-right">
                     <button type="button" class="btn btn-primary btn-xs" id="addorder" data-toggle="modal" data-target="#myModal">
                         <i class="fa fa-plus-square"></i> Add order
                     </button>
-                    <?php
-                        //Yii::app()->createUrl('guestOrder/create')
-                    /*    echo CHtml::link('<i class="fa fa-plus-square"></i> Add order','#'
-                        ,array(
-                        'class' => 'addOrder', 'id' => 'addorder',
-                        'data-toggle' => 'model', 'data-target' => '#myModal'
-                    ));*/
-                    ?>
+                    <button class="updategrid btn btn-primary btn-xs"  value="update grid">Refresh Order</button>
                 </div>
             </div>
         </div>
         <div class="panel-body">
+            <?php $this->renderPartial('_orderview', array('orderModel' => $orderModel)); ?>
         </div>
     </div>
  </div>
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel">
+<!--<div class="modal fade" id="myModal" tabindex="-1" role="dialog" data-backdrop="static" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -364,16 +364,45 @@ $this->menu = array(
             </div>
         </div>
     </div>
-</div>
+</div>-->
+<div id="ajax-modal" class="modal fade" tabindex="-1"></div>
+
 <script type="text/javascript">
+
     $(document).ready(function(){
-        $("#addorder").on('click',function(){
+        $('.updategrid').on('click',function(){
+            $('#guest-order-grid').yiiGridView('update')
+        });
+
+        $('.updateOrder').on('click',function (e) {
+            e.preventDefault();
+            var href = $(this).attr('href');
+          //  $('.orderHtml').html('');
             $.ajax({
-                'url':'<?php echo Yii::app()->createUrl('guestOrder/create');?>',
+                'url':href,
                 'type':'post',
                 'success':function(data) {
                     if (data != '') {
-                        $('.orderformview').html(data);
+                        $('.orderHtml').show().html(data);
+                    }
+                }
+            });
+            /*var href = $(this).attr('href');
+            //var model = '<div id="ajax-modal" class="modal hide fade" tabindex="-1"></div>';
+            //$('body').append(model);
+            $('#ajax-modal').load(href,function(){
+                $('#ajax-modal').modal('show');
+            });*/
+        });
+        
+        $("#addorder").on('click',function(){
+
+            $.ajax({
+                'url':'<?php echo Yii::app()->createUrl('guestOrder/create',array('id' => $model->id));?>',
+                'type':'post',
+                'success':function(data) {
+                    if (data != '') {
+                        $('.orderHtml').html(data);
                     }
                 }
             });

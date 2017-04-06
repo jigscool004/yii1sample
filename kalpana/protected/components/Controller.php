@@ -49,14 +49,16 @@ class Controller extends CController {
         }
         $controllerId = Yii::app()->controller->id;
 
+        if (isset($pageAccessArr[$controllerId]['access'])) {
+            $accessArr[] = array(
+                'allow',
+                'actions' => $pageAccessArr[$controllerId]['access'],
+                'users' => array('*')
+            );
+        }
 
-        $accessArr[] = array(
-            'allow',
-            'actions' => $pageAccessArr[$controllerId]['access'],
-            'users' => array('*')
-        );
 
-        if (count($pageAccessArr[$controllerId]['deny']) > 0) {
+        if (isset($pageAccessArr[$controllerId]['deny']) && count($pageAccessArr[$controllerId]['deny']) > 0) {
             $accessArr[] = array(
                 'deny',
                 'actions' => $pageAccessArr[$controllerId]['deny'],

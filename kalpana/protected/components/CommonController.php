@@ -42,4 +42,15 @@ class CommonController {
         return sha1(md5($password));
     }
 
+    public static function getTaxRate($id = '') {
+        $criteria = new CDbCriteria();
+        $criteria->select = 'id, CONCAT(name," : ",rate, "%") AS name,rate';
+        $criteria->compare('status',1);
+        if ($id != '') {
+            $criteria->compare('id',$id);
+        }
+        $data = TaxRate::model()->findAll($criteria);
+        return $data;
+    }
+
 }

@@ -16,9 +16,11 @@
 
         //  $cs->registerScriptFile($baseUrl . '/themes/kalpana/js/jquery-2.2.3.min.js');
         $cs->registerScriptFile($baseUrl . '/themes/kalpana/js/bootstrap.min.js');
+
+        //$cs->registerScriptFile($baseUrl . '/themes/kalpana/js/bootstrap-modal.js');
         $cs->registerScriptFile($baseUrl . '/themes/kalpana/js/bootstrap-timepicker.js');
         $cs->registerScriptFile($baseUrl . '/themes/kalpana/js/app.min.js');
-
+            $cs->registerScriptFile($baseUrl . '/themes/kalpana/js/bootstrap-datepicker.js');
 
         //$cs->registerCssFile($baseUrl.'/css/yourcss.css');
         ?>

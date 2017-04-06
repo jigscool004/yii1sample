@@ -496,14 +496,14 @@
             $('#room_name').val(data.room_name);
             $('#GuestDetail_room_rate').val(data.room_rate);
         }
-        /*function initialize() {
+        function initialize() {
             var options = {
                 types: ['(cities)']
             };
             var input = document.getElementById('GuestDetail_state');
             var autocomplete = new google.maps.places.Autocomplete(input, options);
         }
-        google.maps.event.addDomListener(window, 'load', initialize);*/
+        google.maps.event.addDomListener(window, 'load', initialize);
     });
 
 
